@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_list_detail_lists",
+  "info": {
+    "displayName": "Detail List",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "order": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    }
+  }
+}
