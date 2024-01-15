@@ -4,7 +4,8 @@
   "info": {
     "singularName": "itinerary",
     "pluralName": "itineraries",
-    "displayName": "Itinerary"
+    "displayName": "Itinerary",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -34,32 +35,42 @@
       "required": true
     },
     "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "required": true
+      }
     },
-    "file": {
+    "hero": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ],
-      "type": "media",
-      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "slug": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
+      "type": "uid",
+      "targetField": "title",
       "required": true
     }
   }

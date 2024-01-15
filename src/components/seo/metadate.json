@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_seo_metadates",
+  "info": {
+    "displayName": "Metadate",
+    "icon": "rocket",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

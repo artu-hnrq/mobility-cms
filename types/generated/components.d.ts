@@ -5,11 +5,24 @@ export interface ListDetailList extends Schema.Component {
   info: {
     displayName: 'Detail List';
     icon: 'layer';
+    description: '';
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
-    order: Attribute.Integer & Attribute.Required & Attribute.Unique;
+  };
+}
+
+export interface SeoMetadate extends Schema.Component {
+  collectionName: 'components_seo_metadates';
+  info: {
+    displayName: 'Metadate';
+    icon: 'rocket';
+    description: '';
+  };
+  attributes: {
+    description: Attribute.Text & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
   };
 }
 
@@ -17,6 +30,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'list.detail-list': ListDetailList;
+      'seo.metadate': SeoMetadate;
     }
   }
 }
