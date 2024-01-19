@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_store_stores",
+  "info": {
+    "displayName": "Store",
+    "icon": "shoppingCart",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "city": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    }
+  }
+}

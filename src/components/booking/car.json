@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_car_cars",
+  "info": {
+    "displayName": "Car",
+    "icon": "car",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "model": {
+      "type": "string"
+    },
+    "transmission_type": {
+      "type": "string"
+    },
+    "quantity_of_passengers": {
+      "type": "integer"
+    },
+    "quantity_of_baggages": {
+      "type": "integer"
+    },
+    "color": {
+      "type": "string"
+    },
+    "supplier_name": {
+      "type": "string"
+    },
+    "image_url": {
+      "type": "string"
+    }
+  }
+}

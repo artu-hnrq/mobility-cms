@@ -1010,6 +1010,47 @@ export interface ApiBlogCategoryBlogCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiBookingBooking extends Schema.CollectionType {
+  collectionName: 'bookings';
+  info: {
+    singularName: 'booking';
+    pluralName: 'bookings';
+    displayName: 'Booking';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    booking_id: Attribute.String;
+    pick_up_datetime: Attribute.DateTime;
+    return_datetime: Attribute.DateTime;
+    creation_datetime: Attribute.DateTime;
+    conductor_name: Attribute.String;
+    payment_method: Attribute.String;
+    daily: Attribute.Decimal;
+    total_amount: Attribute.Decimal;
+    car: Attribute.Component<'booking.car'>;
+    store: Attribute.Component<'booking.store'>;
+    reservation_items: Attribute.Component<'booking.reservation-items', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::booking.booking',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::booking.booking',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -1467,6 +1508,7 @@ declare module '@strapi/types' {
       'api::banner.banner': ApiBannerBanner;
       'api::blog.blog': ApiBlogBlog;
       'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
+      'api::booking.booking': ApiBookingBooking;
       'api::category.category': ApiCategoryCategory;
       'api::experience.experience': ApiExperienceExperience;
       'api::itinerary.itinerary': ApiItineraryItinerary;

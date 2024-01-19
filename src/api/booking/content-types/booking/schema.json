@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "singularName": "booking",
+    "pluralName": "bookings",
+    "displayName": "Booking",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "booking_id": {
+      "type": "string",
+      "required": false
+    },
+    "pick_up_datetime": {
+      "type": "datetime"
+    },
+    "return_datetime": {
+      "type": "datetime"
+    },
+    "creation_datetime": {
+      "type": "datetime"
+    },
+    "conductor_name": {
+      "type": "string"
+    },
+    "payment_method": {
+      "type": "string"
+    },
+    "daily": {
+      "type": "decimal"
+    },
+    "total_amount": {
+      "type": "decimal"
+    },
+    "car": {
+      "type": "component",
+      "repeatable": false,
+      "component": "booking.car"
+    },
+    "store": {
+      "type": "component",
+      "repeatable": false,
+      "component": "booking.store"
+    },
+    "reservation_items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "booking.reservation-items"
+    }
+  }
+}

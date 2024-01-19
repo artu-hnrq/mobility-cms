@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_list_reservation_items",
+  "info": {
+    "displayName": "Reservation Item",
+    "icon": "plus",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "fee_included": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "text"
+    },
+    "fee_type": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "equivalent_amount": {
+      "type": "decimal"
+    },
+    "code": {
+      "type": "string"
+    },
+    "prepayment": {
+      "type": "boolean"
+    },
+    "amount_in_percentage": {
+      "type": "decimal"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "total_amount_payment": {
+      "type": "decimal"
+    },
+    "total_amount_equivalent": {
+      "type": "decimal"
+    },
+    "payment_at_destination": {
+      "type": "boolean"
+    }
+  }
+}
