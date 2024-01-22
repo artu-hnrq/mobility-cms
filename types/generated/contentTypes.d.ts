@@ -880,14 +880,61 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    category: Attribute.String & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
-    slug: Attribute.String & Attribute.Required;
-    date: Attribute.Date & Attribute.Required;
-    summary: Attribute.Text & Attribute.Required;
-    cover: Attribute.Media & Attribute.Required;
-    content: Attribute.RichText & Attribute.Required;
+    category: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    date: Attribute.Date &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    summary: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    cover: Attribute.Media &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    content: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -903,6 +950,12 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::blog-post.blog-post',
+      'oneToMany',
+      'api::blog-post.blog-post'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -917,18 +970,84 @@ export interface ApiBookingBooking extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    booking_id: Attribute.String;
-    pick_up_datetime: Attribute.DateTime;
-    return_datetime: Attribute.DateTime;
-    creation_datetime: Attribute.DateTime;
-    conductor_name: Attribute.String;
-    payment_method: Attribute.String;
-    daily: Attribute.Decimal;
-    total_amount: Attribute.Decimal;
-    car: Attribute.Component<'booking.car'>;
-    store: Attribute.Component<'booking.store'>;
-    reservation_items: Attribute.Component<'booking.reservation-items', true>;
+    booking_id: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    pick_up_datetime: Attribute.DateTime &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    return_datetime: Attribute.DateTime &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    creation_datetime: Attribute.DateTime &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    conductor_name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    payment_method: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    daily: Attribute.Decimal &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    total_amount: Attribute.Decimal &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    car: Attribute.Component<'booking.car'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    pickup_store: Attribute.Component<'booking.store'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    reservation_items: Attribute.Component<'booking.reservation-items', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    return_store: Attribute.Component<'booking.store'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -944,6 +1063,12 @@ export interface ApiBookingBooking extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::booking.booking',
+      'oneToMany',
+      'api::booking.booking'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1013,13 +1138,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    benefits: Attribute.Component<'list.detail-list', true> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     experiences: Attribute.Relation<
       'api::category.category',
       'oneToMany',
@@ -1054,7 +1172,7 @@ export interface ApiExperienceExperience extends Schema.CollectionType {
   info: {
     singularName: 'experience';
     pluralName: 'experiences';
-    displayName: 'Experience';
+    displayName: 'Page Product';
     description: '';
   };
   options: {
@@ -1066,55 +1184,9 @@ export interface ApiExperienceExperience extends Schema.CollectionType {
     };
   };
   attributes: {
-    name: Attribute.String &
+    title: Attribute.String &
       Attribute.Required &
       Attribute.Unique &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    description_one: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    description_two: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    categories: Attribute.Relation<
-      'api::experience.experience',
-      'oneToMany',
-      'api::category.category'
-    >;
-    cover: Attribute.Media &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    hero: Attribute.Media &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    description_one_title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    description_two_title: Attribute.String &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1127,8 +1199,26 @@ export interface ApiExperienceExperience extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    slug: Attribute.UID<'api::experience.experience', 'name'> &
+    slug: Attribute.UID &
       Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    hero: Attribute.Component<'section.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    link_list: Attribute.Component<'section.image-link-list'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    features: Attribute.Component<'section.feature-list'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1169,11 +1259,34 @@ export interface ApiFaqGroupFaqGroup extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String & Attribute.Required & Attribute.Unique;
-    image: Attribute.Media & Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    image: Attribute.Media &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     presentation_mode: Attribute.Enumeration<['B2C', 'B2B', 'Both']> &
-      Attribute.Required;
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     items: Attribute.Relation<
       'api::faq-group.faq-group',
       'oneToMany',
@@ -1194,6 +1307,12 @@ export interface ApiFaqGroupFaqGroup extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::faq-group.faq-group',
+      'oneToMany',
+      'api::faq-group.faq-group'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1202,11 +1321,16 @@ export interface ApiFaqItemFaqItem extends Schema.CollectionType {
   info: {
     singularName: 'faq-item';
     pluralName: 'faq-items';
-    displayName: 'Faq Item';
+    displayName: 'FAQ Item';
     description: '';
   };
   options: {
     draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
     group: Attribute.Relation<
@@ -1214,9 +1338,26 @@ export interface ApiFaqItemFaqItem extends Schema.CollectionType {
       'manyToOne',
       'api::faq-group.faq-group'
     >;
-    title: Attribute.String;
-    summary: Attribute.Text & Attribute.Required;
-    body: Attribute.RichText & Attribute.Required;
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    summary: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    body: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1232,6 +1373,12 @@ export interface ApiFaqItemFaqItem extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::faq-item.faq-item',
+      'oneToMany',
+      'api::faq-item.faq-item'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1322,12 +1469,42 @@ export interface ApiOpenQuestionOpenQuestion extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    date: Attribute.Date;
-    full_name: Attribute.String;
-    email: Attribute.String;
-    agency: Attribute.String;
-    cnpj: Attribute.String;
+    date: Attribute.Date &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    full_name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    email: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    agency: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    cnpj: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     subject: Attribute.Enumeration<
       [
         'MobilitySelect',
@@ -1338,8 +1515,19 @@ export interface ApiOpenQuestionOpenQuestion extends Schema.CollectionType {
         'Comercial',
         'SAC'
       ]
-    >;
-    body: Attribute.Text & Attribute.Required;
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    body: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1355,6 +1543,12 @@ export interface ApiOpenQuestionOpenQuestion extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::open-question.open-question',
+      'oneToMany',
+      'api::open-question.open-question'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1434,16 +1628,6 @@ export interface ApiPagePage extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    advantages: Attribute.Component<'list.detail-list', true> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.SetMinMax<{
-        max: 3;
-      }>;
     aboutus_title: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1502,6 +1686,75 @@ export interface ApiPagePage extends Schema.CollectionType {
   };
 }
 
+export interface ApiPageExperiencePageExperience extends Schema.CollectionType {
+  collectionName: 'page_experiences';
+  info: {
+    singularName: 'page-experience';
+    pluralName: 'page-experiences';
+    displayName: 'Page Experience';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<'api::page-experience.page-experience', 'title'>;
+    cover: Attribute.Media &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    content: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    link_list: Attribute.Component<'section.image-link-list'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-experience.page-experience',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-experience.page-experience',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::page-experience.page-experience',
+      'oneToMany',
+      'api::page-experience.page-experience'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1530,6 +1783,7 @@ declare module '@strapi/types' {
       'api::itinerary.itinerary': ApiItineraryItinerary;
       'api::open-question.open-question': ApiOpenQuestionOpenQuestion;
       'api::page.page': ApiPagePage;
+      'api::page-experience.page-experience': ApiPageExperiencePageExperience;
     }
   }
 }

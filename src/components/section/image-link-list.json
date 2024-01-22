@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_section_image_link_lists",
+  "info": {
+    "displayName": "Image Link List",
+    "icon": "filter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "summary": {
+      "type": "text",
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.image-link"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.cta"
+    }
+  }
+}

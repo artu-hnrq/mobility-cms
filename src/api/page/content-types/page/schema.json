@@ -93,18 +93,6 @@
       "targetField": "name",
       "required": true
     },
-    "advantages": {
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "list.detail-list",
-      "required": true,
-      "max": 3
-    },
     "aboutus_title": {
       "pluginOptions": {
         "i18n": {

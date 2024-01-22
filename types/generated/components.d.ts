@@ -53,16 +53,82 @@ export interface BookingStore extends Schema.Component {
   };
 }
 
-export interface ListDetailList extends Schema.Component {
-  collectionName: 'components_list_detail_lists';
+export interface ComponentCta extends Schema.Component {
+  collectionName: 'components_component_ctas';
   info: {
-    displayName: 'Detail List';
-    icon: 'layer';
+    displayName: 'cta';
+    icon: 'quote';
+  };
+  attributes: {
+    text: Attribute.String & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ComponentFeature extends Schema.Component {
+  collectionName: 'components_component_features';
+  info: {
+    displayName: 'Feature';
+    icon: 'dashboard';
+  };
+  attributes: {
+    title: Attribute.String;
+    summary: Attribute.Text;
+  };
+}
+
+export interface ComponentImageLink extends Schema.Component {
+  collectionName: 'components_component_image_links';
+  info: {
+    displayName: 'Image Link';
+    icon: 'dashboard';
+  };
+  attributes: {
+    url: Attribute.String & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
+  };
+}
+
+export interface SectionFeatureList extends Schema.Component {
+  collectionName: 'components_section_feature_lists';
+  info: {
+    displayName: 'Feature List';
+    icon: 'dashboard';
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media & Attribute.Required;
+    features: Attribute.Component<'component.feature', true>;
+  };
+}
+
+export interface SectionHero extends Schema.Component {
+  collectionName: 'components_section_heroes';
+  info: {
+    displayName: 'Hero';
+    icon: 'layout';
+  };
+  attributes: {
+    heading: Attribute.String & Attribute.Required;
+    summary: Attribute.Text;
+    cta: Attribute.Component<'component.cta'> & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
+  };
+}
+
+export interface SectionImageLinkList extends Schema.Component {
+  collectionName: 'components_section_image_link_lists';
+  info: {
+    displayName: 'Image Link List';
+    icon: 'filter';
     description: '';
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
+    heading: Attribute.String & Attribute.Required;
+    summary: Attribute.Text & Attribute.Required;
+    links: Attribute.Component<'component.image-link', true>;
+    cta: Attribute.Component<'component.cta'>;
   };
 }
 
@@ -85,7 +151,12 @@ declare module '@strapi/types' {
       'booking.car': BookingCar;
       'booking.reservation-items': BookingReservationItems;
       'booking.store': BookingStore;
-      'list.detail-list': ListDetailList;
+      'component.cta': ComponentCta;
+      'component.feature': ComponentFeature;
+      'component.image-link': ComponentImageLink;
+      'section.feature-list': SectionFeatureList;
+      'section.hero': SectionHero;
+      'section.image-link-list': SectionImageLinkList;
       'seo.metadate': SeoMetadate;
     }
   }

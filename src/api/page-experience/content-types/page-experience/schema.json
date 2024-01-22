@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "faq_groups",
+  "collectionName": "page_experiences",
   "info": {
-    "singularName": "faq-group",
-    "pluralName": "faq-groups",
-    "displayName": "FAQ Group",
+    "singularName": "page-experience",
+    "pluralName": "page-experiences",
+    "displayName": "Page Experience",
     "description": ""
   },
   "options": {
@@ -19,14 +19,17 @@
     "title": {
       "type": "string",
       "required": true,
-      "unique": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "image": {
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "cover": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -39,13 +42,8 @@
         }
       }
     },
-    "presentation_mode": {
-      "type": "enumeration",
-      "enum": [
-        "B2C",
-        "B2B",
-        "Both"
-      ],
+    "content": {
+      "type": "richtext",
       "required": true,
       "pluginOptions": {
         "i18n": {
@@ -53,11 +51,15 @@
         }
       }
     },
-    "items": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::faq-item.faq-item",
-      "mappedBy": "group"
+    "link_list": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.image-link-list",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
