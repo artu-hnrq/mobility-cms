@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faq_groups",
+  "info": {
+    "singularName": "faq-group",
+    "pluralName": "faq-groups",
+    "displayName": "FAQ Group",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "presentation_mode": {
+      "type": "enumeration",
+      "enum": [
+        "B2C",
+        "B2B",
+        "Both"
+      ],
+      "required": true
+    },
+    "items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq-item.faq-item",
+      "mappedBy": "group"
+    }
+  }
+}

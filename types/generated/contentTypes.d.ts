@@ -869,144 +869,40 @@ export interface ApiBannerBanner extends Schema.CollectionType {
   };
 }
 
-export interface ApiBlogBlog extends Schema.CollectionType {
-  collectionName: 'blogs';
+export interface ApiBlogPostBlogPost extends Schema.CollectionType {
+  collectionName: 'blog_posts';
   info: {
-    singularName: 'blog';
-    pluralName: 'blogs';
-    displayName: 'Blog';
+    singularName: 'blog-post';
+    pluralName: 'blog-posts';
+    displayName: 'Blog Post';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
   attributes: {
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    short_description: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    content: Attribute.RichText &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    cover: Attribute.Media &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    blog_category: Attribute.Relation<
-      'api::blog.blog',
-      'manyToOne',
-      'api::blog-category.blog-category'
-    >;
-    slug: Attribute.UID<'api::blog.blog', 'title'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    hero: Attribute.Media &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::blog.blog',
-      'oneToMany',
-      'api::blog.blog'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiBlogCategoryBlogCategory extends Schema.CollectionType {
-  collectionName: 'blog_categories';
-  info: {
-    singularName: 'blog-category';
-    pluralName: 'blog-categories';
-    displayName: 'Blog Category';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    name: Attribute.String &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    blogs: Attribute.Relation<
-      'api::blog-category.blog-category',
-      'oneToMany',
-      'api::blog.blog'
-    >;
-    slug: Attribute.UID<'api::blog-category.blog-category', 'name'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    category: Attribute.String & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    slug: Attribute.String & Attribute.Required;
+    date: Attribute.Date & Attribute.Required;
+    summary: Attribute.Text & Attribute.Required;
+    cover: Attribute.Media & Attribute.Required;
+    content: Attribute.RichText & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::blog-category.blog-category',
+      'api::blog-post.blog-post',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::blog-category.blog-category',
+      'api::blog-post.blog-post',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::blog-category.blog-category',
-      'oneToMany',
-      'api::blog-category.blog-category'
-    >;
-    locale: Attribute.String;
   };
 }
 
@@ -1210,11 +1106,6 @@ export interface ApiExperienceExperience extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    blog_categories: Attribute.Relation<
-      'api::experience.experience',
-      'oneToMany',
-      'api::blog-category.blog-category'
-    >;
     description_one_title: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1264,6 +1155,83 @@ export interface ApiExperienceExperience extends Schema.CollectionType {
       'api::experience.experience'
     >;
     locale: Attribute.String;
+  };
+}
+
+export interface ApiFaqGroupFaqGroup extends Schema.CollectionType {
+  collectionName: 'faq_groups';
+  info: {
+    singularName: 'faq-group';
+    pluralName: 'faq-groups';
+    displayName: 'FAQ Group';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    image: Attribute.Media & Attribute.Required;
+    presentation_mode: Attribute.Enumeration<['B2C', 'B2B', 'Both']> &
+      Attribute.Required;
+    items: Attribute.Relation<
+      'api::faq-group.faq-group',
+      'oneToMany',
+      'api::faq-item.faq-item'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faq-group.faq-group',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faq-group.faq-group',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFaqItemFaqItem extends Schema.CollectionType {
+  collectionName: 'faq_items';
+  info: {
+    singularName: 'faq-item';
+    pluralName: 'faq-items';
+    displayName: 'Faq Item';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    group: Attribute.Relation<
+      'api::faq-item.faq-item',
+      'manyToOne',
+      'api::faq-group.faq-group'
+    >;
+    title: Attribute.String;
+    summary: Attribute.Text & Attribute.Required;
+    body: Attribute.RichText & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faq-item.faq-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faq-item.faq-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
   };
 }
 
@@ -1340,6 +1308,53 @@ export interface ApiItineraryItinerary extends Schema.CollectionType {
       'api::itinerary.itinerary'
     >;
     locale: Attribute.String;
+  };
+}
+
+export interface ApiOpenQuestionOpenQuestion extends Schema.CollectionType {
+  collectionName: 'open_questions';
+  info: {
+    singularName: 'open-question';
+    pluralName: 'open-questions';
+    displayName: 'Open Question';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    date: Attribute.Date;
+    full_name: Attribute.String;
+    email: Attribute.String;
+    agency: Attribute.String;
+    cnpj: Attribute.String;
+    subject: Attribute.Enumeration<
+      [
+        'MobilitySelect',
+        'Reservas',
+        'Comissoes',
+        'Duvidas',
+        'Financeiro',
+        'Comercial',
+        'SAC'
+      ]
+    >;
+    body: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::open-question.open-question',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::open-question.open-question',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
   };
 }
 
@@ -1506,12 +1521,14 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::banner.banner': ApiBannerBanner;
-      'api::blog.blog': ApiBlogBlog;
-      'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
+      'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::booking.booking': ApiBookingBooking;
       'api::category.category': ApiCategoryCategory;
       'api::experience.experience': ApiExperienceExperience;
+      'api::faq-group.faq-group': ApiFaqGroupFaqGroup;
+      'api::faq-item.faq-item': ApiFaqItemFaqItem;
       'api::itinerary.itinerary': ApiItineraryItinerary;
+      'api::open-question.open-question': ApiOpenQuestionOpenQuestion;
       'api::page.page': ApiPagePage;
     }
   }

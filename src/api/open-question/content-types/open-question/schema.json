@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "open_questions",
+  "info": {
+    "singularName": "open-question",
+    "pluralName": "open-questions",
+    "displayName": "Open Question",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "full_name": {
+      "type": "string",
+      "required": false
+    },
+    "email": {
+      "type": "string",
+      "required": false
+    },
+    "agency": {
+      "type": "string",
+      "required": false
+    },
+    "cnpj": {
+      "type": "string",
+      "required": false
+    },
+    "subject": {
+      "type": "enumeration",
+      "enum": [
+        "MobilitySelect",
+        "Reservas",
+        "Comissoes",
+        "Duvidas",
+        "Financeiro",
+        "Comercial",
+        "SAC"
+      ],
+      "required": false
+    },
+    "body": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
