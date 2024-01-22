@@ -19,9 +19,6 @@
     "quantity_of_baggages": {
       "type": "integer"
     },
-    "color": {
-      "type": "string"
-    },
     "supplier_name": {
       "type": "string"
     },

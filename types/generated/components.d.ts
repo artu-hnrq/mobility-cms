@@ -12,7 +12,6 @@ export interface BookingCar extends Schema.Component {
     transmission_type: Attribute.String;
     quantity_of_passengers: Attribute.Integer;
     quantity_of_baggages: Attribute.Integer;
-    color: Attribute.String;
     supplier_name: Attribute.String;
     image_url: Attribute.String;
   };
