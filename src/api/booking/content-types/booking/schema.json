@@ -18,7 +18,7 @@
   "attributes": {
     "booking_id": {
       "type": "string",
-      "required": false,
+      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -31,7 +31,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "return_datetime": {
       "type": "datetime",
@@ -39,7 +40,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "creation_date_and_time": {
       "type": "datetime",
@@ -47,7 +49,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "conductor_name": {
       "type": "string",
@@ -55,7 +58,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "form_of_payment": {
       "type": "string",
@@ -63,7 +67,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "daily_price": {
       "type": "decimal",
@@ -80,7 +85,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "car": {
       "type": "component",
@@ -90,7 +96,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "pickup_store": {
       "type": "component",
@@ -100,7 +107,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "reservation_items": {
       "type": "component",
@@ -120,7 +128,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     }
   }
 }

@@ -900,13 +900,6 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    slug: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     date: Attribute.Date &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -929,6 +922,13 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
         };
       }>;
     content: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<'api::blog-post.blog-post', 'title'> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -977,36 +977,42 @@ export interface ApiBookingBooking extends Schema.CollectionType {
   };
   attributes: {
     booking_id: Attribute.String &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     pick_up_datetime: Attribute.DateTime &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     return_datetime: Attribute.DateTime &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     creation_date_and_time: Attribute.DateTime &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     conductor_name: Attribute.String &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     form_of_payment: Attribute.String &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1020,18 +1026,21 @@ export interface ApiBookingBooking extends Schema.CollectionType {
         };
       }>;
     total_amount: Attribute.Decimal &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     car: Attribute.Component<'booking.car'> &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     pickup_store: Attribute.Component<'booking.store'> &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1044,6 +1053,7 @@ export interface ApiBookingBooking extends Schema.CollectionType {
         };
       }>;
     return_store: Attribute.Component<'booking.store'> &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1208,18 +1218,21 @@ export interface ApiExperienceExperience extends Schema.CollectionType {
         };
       }>;
     hero: Attribute.Component<'section.hero'> &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     link_list: Attribute.Component<'section.image-link-list'> &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     features: Attribute.Component<'section.feature-list'> &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1268,7 +1281,6 @@ export interface ApiFaqGroupFaqGroup extends Schema.CollectionType {
   attributes: {
     title: Attribute.String &
       Attribute.Required &
-      Attribute.Unique &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1288,7 +1300,7 @@ export interface ApiFaqGroupFaqGroup extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    items: Attribute.Relation<
+    pages: Attribute.Relation<
       'api::faq-group.faq-group',
       'oneToMany',
       'api::faq-item.faq-item'
@@ -1322,7 +1334,7 @@ export interface ApiFaqItemFaqItem extends Schema.CollectionType {
   info: {
     singularName: 'faq-item';
     pluralName: 'faq-items';
-    displayName: 'FAQ Item';
+    displayName: 'Page FAQ';
     description: '';
   };
   options: {
@@ -1334,12 +1346,8 @@ export interface ApiFaqItemFaqItem extends Schema.CollectionType {
     };
   };
   attributes: {
-    group: Attribute.Relation<
-      'api::faq-item.faq-item',
-      'manyToOne',
-      'api::faq-group.faq-group'
-    >;
     title: Attribute.String &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1352,7 +1360,19 @@ export interface ApiFaqItemFaqItem extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    body: Attribute.RichText &
+    content: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    group: Attribute.Relation<
+      'api::faq-item.faq-item',
+      'manyToOne',
+      'api::faq-group.faq-group'
+    >;
+    slug: Attribute.UID<'api::faq-item.faq-item', 'title'> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1711,7 +1731,8 @@ export interface ApiPageExperiencePageExperience extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    slug: Attribute.UID<'api::page-experience.page-experience', 'title'>;
+    slug: Attribute.UID<'api::page-experience.page-experience', 'title'> &
+      Attribute.Required;
     cover: Attribute.Media &
       Attribute.Required &
       Attribute.SetPluginOptions<{

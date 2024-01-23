@@ -19,7 +19,7 @@
     "title": {
       "type": "string",
       "required": true,
-      "unique": true,
+      "unique": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -53,7 +53,7 @@
         }
       }
     },
-    "items": {
+    "pages": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq-item.faq-item",

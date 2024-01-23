@@ -70,9 +70,10 @@ export interface ComponentFeature extends Schema.Component {
   info: {
     displayName: 'Feature';
     icon: 'dashboard';
+    description: '';
   };
   attributes: {
-    title: Attribute.String;
+    title: Attribute.String & Attribute.Required;
     summary: Attribute.Text;
   };
 }
@@ -108,10 +109,11 @@ export interface SectionHero extends Schema.Component {
   info: {
     displayName: 'Hero';
     icon: 'layout';
+    description: '';
   };
   attributes: {
     heading: Attribute.String & Attribute.Required;
-    summary: Attribute.Text;
+    summary: Attribute.Text & Attribute.Required;
     cta: Attribute.Component<'component.cta'> & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
   };

@@ -54,7 +54,8 @@
           "localized": true
         }
       },
-      "component": "section.hero"
+      "component": "section.hero",
+      "required": true
     },
     "link_list": {
       "type": "component",
@@ -64,7 +65,8 @@
           "localized": true
         }
       },
-      "component": "section.image-link-list"
+      "component": "section.image-link-list",
+      "required": true
     },
     "features": {
       "type": "component",
@@ -74,7 +76,8 @@
           "localized": true
         }
       },
-      "component": "section.feature-list"
+      "component": "section.feature-list",
+      "required": true
     }
   }
 }

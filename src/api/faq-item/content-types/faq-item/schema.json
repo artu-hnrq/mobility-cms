@@ -4,7 +4,7 @@
   "info": {
     "singularName": "faq-item",
     "pluralName": "faq-items",
-    "displayName": "FAQ Item",
+    "displayName": "Page FAQ",
     "description": ""
   },
   "options": {
@@ -16,19 +16,14 @@
     }
   },
   "attributes": {
-    "group": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::faq-group.faq-group",
-      "inversedBy": "items"
-    },
     "title": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "summary": {
       "type": "text",
@@ -39,7 +34,7 @@
         }
       }
     },
-    "body": {
+    "content": {
       "type": "richtext",
       "required": true,
       "pluginOptions": {
@@ -47,6 +42,22 @@
           "localized": true
         }
       }
+    },
+    "group": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::faq-group.faq-group",
+      "inversedBy": "pages"
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "targetField": "title",
+      "required": true
     }
   }
 }
