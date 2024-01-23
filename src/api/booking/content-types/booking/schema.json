@@ -41,7 +41,7 @@
         }
       }
     },
-    "creation_datetime": {
+    "creation_date_and_time": {
       "type": "datetime",
       "pluginOptions": {
         "i18n": {
@@ -57,7 +57,7 @@
         }
       }
     },
-    "payment_method": {
+    "form_of_payment": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -65,13 +65,14 @@
         }
       }
     },
-    "daily": {
+    "daily_price": {
       "type": "decimal",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "total_amount": {
       "type": "decimal",

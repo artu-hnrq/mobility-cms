@@ -994,7 +994,7 @@ export interface ApiBookingBooking extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    creation_datetime: Attribute.DateTime &
+    creation_date_and_time: Attribute.DateTime &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1006,13 +1006,14 @@ export interface ApiBookingBooking extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    payment_method: Attribute.String &
+    form_of_payment: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    daily: Attribute.Decimal &
+    daily_price: Attribute.Decimal &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
