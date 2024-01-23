@@ -61,6 +61,17 @@
           "localized": true
         }
       }
+    },
+    "seo_metadata": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "seo.metadate",
+      "required": true
     }
   }
 }

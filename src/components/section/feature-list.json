@@ -2,7 +2,8 @@
   "collectionName": "components_section_feature_lists",
   "info": {
     "displayName": "Feature List",
-    "icon": "dashboard"
+    "icon": "dashboard",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,17 +11,18 @@
       "type": "string"
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "features": {
       "type": "component",
       "repeatable": true,
-      "component": "component.feature"
+      "component": "component.feature",
+      "required": true
     }
   }
 }

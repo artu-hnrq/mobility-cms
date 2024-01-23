@@ -96,11 +96,13 @@ export interface SectionFeatureList extends Schema.Component {
   info: {
     displayName: 'Feature List';
     icon: 'dashboard';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
-    image: Attribute.Media & Attribute.Required;
-    features: Attribute.Component<'component.feature', true>;
+    image: Attribute.Media;
+    features: Attribute.Component<'component.feature', true> &
+      Attribute.Required;
   };
 }
 
@@ -112,10 +114,10 @@ export interface SectionHero extends Schema.Component {
     description: '';
   };
   attributes: {
-    heading: Attribute.String & Attribute.Required;
-    summary: Attribute.Text & Attribute.Required;
+    heading: Attribute.String;
+    summary: Attribute.Text;
     cta: Attribute.Component<'component.cta'> & Attribute.Required;
-    image: Attribute.Media & Attribute.Required;
+    image: Attribute.Media;
   };
 }
 
@@ -127,17 +129,18 @@ export interface SectionImageLinkList extends Schema.Component {
     description: '';
   };
   attributes: {
-    heading: Attribute.String & Attribute.Required;
-    summary: Attribute.Text & Attribute.Required;
-    links: Attribute.Component<'component.image-link', true>;
-    cta: Attribute.Component<'component.cta'>;
+    heading: Attribute.String;
+    summary: Attribute.Text;
+    links: Attribute.Component<'component.image-link', true> &
+      Attribute.Required;
+    cta: Attribute.Component<'component.cta'> & Attribute.Required;
   };
 }
 
 export interface SeoMetadate extends Schema.Component {
   collectionName: 'components_seo_metadates';
   info: {
-    displayName: 'Metadate';
+    displayName: 'Metadata';
     icon: 'rocket';
     description: '';
   };

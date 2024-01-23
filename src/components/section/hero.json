@@ -9,11 +9,11 @@
   "attributes": {
     "heading": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "summary": {
       "type": "text",
-      "required": true
+      "required": false
     },
     "cta": {
       "type": "component",
@@ -24,7 +24,7 @@
     "image": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]

@@ -1379,6 +1379,13 @@ export interface ApiFaqItemFaqItem extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    seo_metadata: Attribute.Component<'seo.metadate'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1748,6 +1755,13 @@ export interface ApiPageExperiencePageExperience extends Schema.CollectionType {
         };
       }>;
     link_list: Attribute.Component<'section.image-link-list'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo_metadata: Attribute.Component<'seo.metadate'> &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
