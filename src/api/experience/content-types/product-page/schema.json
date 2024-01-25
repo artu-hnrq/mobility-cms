@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "product-pages",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "Car Category",
+    "singularName": "product-page",
+    "pluralName": "product-pages",
+    "displayName": "Page Product",
     "description": ""
   },
   "options": {
@@ -16,47 +16,26 @@
     }
   },
   "attributes": {
-    "name": {
+    "title": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "type": "string",
-      "required": true,
-      "unique": false
-    },
-    "url": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "string",
+      "unique": true,
       "required": true
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "api_id": {
+    "seo_metadate": {
+      "type": "component",
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
-      "required": true,
-      "unique": false
+      "component": "seo.metadate",
+      "required": true
     },
     "slug": {
       "pluginOptions": {
@@ -65,30 +44,40 @@
         }
       },
       "type": "uid",
-      "targetField": "name",
       "required": true
     },
-    "description": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "text",
+      "component": "section.hero",
       "required": true
     },
-    "cover": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ],
+    "link_list": {
+      "type": "component",
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "section.image-link-list",
+      "required": true
+    },
+    "features": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.feature-list",
+      "required": true
     }
   }
 }

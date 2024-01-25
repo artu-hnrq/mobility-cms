@@ -1189,11 +1189,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    experiences: Attribute.Relation<
-      'api::category.category',
-      'oneToMany',
-      'api::experience.experience'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1218,13 +1213,12 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
-export interface ApiExperienceExperience extends Schema.CollectionType {
-  collectionName: 'experiences';
+export interface ApiExperiencePageExperiencePage extends Schema.CollectionType {
+  collectionName: 'experience_pages';
   info: {
-    singularName: 'experience';
-    pluralName: 'experiences';
-    displayName: 'Page Product';
-    description: '';
+    singularName: 'experience-page';
+    pluralName: 'experience-pages';
+    displayName: 'Page.Experience';
   };
   options: {
     draftAndPublish: true;
@@ -1237,27 +1231,21 @@ export interface ApiExperienceExperience extends Schema.CollectionType {
   attributes: {
     title: Attribute.String &
       Attribute.Required &
-      Attribute.Unique &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    seo_metadate: Attribute.Component<'seo.metadate'> &
+    slug: Attribute.UID<'api::experience-page.experience-page', 'title'> &
+      Attribute.Required;
+    cover: Attribute.Media &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    slug: Attribute.UID &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    hero: Attribute.Component<'section.hero'> &
+    content: Attribute.RichText &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1265,13 +1253,12 @@ export interface ApiExperienceExperience extends Schema.CollectionType {
         };
       }>;
     link_list: Attribute.Component<'section.image-link-list'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    features: Attribute.Component<'section.feature-list'> &
+    seo_metadata: Attribute.Component<'seo.metadate'> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1282,21 +1269,21 @@ export interface ApiExperienceExperience extends Schema.CollectionType {
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::experience.experience',
+      'api::experience-page.experience-page',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::experience.experience',
+      'api::experience-page.experience-page',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     localizations: Attribute.Relation<
-      'api::experience.experience',
+      'api::experience-page.experience-page',
       'oneToMany',
-      'api::experience.experience'
+      'api::experience-page.experience-page'
     >;
     locale: Attribute.String;
   };
@@ -1340,10 +1327,10 @@ export interface ApiFaqGroupFaqGroup extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    pages: Attribute.Relation<
+    page_faqs: Attribute.Relation<
       'api::faq-group.faq-group',
       'oneToMany',
-      'api::faq-item.faq-item'
+      'api::faq-page.faq-page'
     >;
     slug: Attribute.UID<'api::faq-group.faq-group', 'title'> &
       Attribute.Required &
@@ -1376,12 +1363,12 @@ export interface ApiFaqGroupFaqGroup extends Schema.CollectionType {
   };
 }
 
-export interface ApiFaqItemFaqItem extends Schema.CollectionType {
-  collectionName: 'faq_items';
+export interface ApiFaqPageFaqPage extends Schema.CollectionType {
+  collectionName: 'faq_pages';
   info: {
-    singularName: 'faq-item';
-    pluralName: 'faq-items';
-    displayName: 'Page FAQ';
+    singularName: 'faq-page';
+    pluralName: 'faq-pages';
+    displayName: 'Page.FAQ';
     description: '';
   };
   options: {
@@ -1414,12 +1401,7 @@ export interface ApiFaqItemFaqItem extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    group: Attribute.Relation<
-      'api::faq-item.faq-item',
-      'manyToOne',
-      'api::faq-group.faq-group'
-    >;
-    slug: Attribute.UID<'api::faq-item.faq-item', 'title'> &
+    slug: Attribute.UID<'api::faq-page.faq-page', 'title'> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1433,25 +1415,30 @@ export interface ApiFaqItemFaqItem extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    faq_group: Attribute.Relation<
+      'api::faq-page.faq-page',
+      'manyToOne',
+      'api::faq-group.faq-group'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::faq-item.faq-item',
+      'api::faq-page.faq-page',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::faq-item.faq-item',
+      'api::faq-page.faq-page',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     localizations: Attribute.Relation<
-      'api::faq-item.faq-item',
+      'api::faq-page.faq-page',
       'oneToMany',
-      'api::faq-item.faq-item'
+      'api::faq-page.faq-page'
     >;
     locale: Attribute.String;
   };
@@ -1627,147 +1614,12 @@ export interface ApiOpenQuestionOpenQuestion extends Schema.CollectionType {
   };
 }
 
-export interface ApiPagePage extends Schema.CollectionType {
-  collectionName: 'pages';
+export interface ApiProductPageProductPage extends Schema.CollectionType {
+  collectionName: 'product_pages';
   info: {
-    singularName: 'page';
-    pluralName: 'pages';
-    displayName: 'Page';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    name: Attribute.String &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    banner: Attribute.Relation<
-      'api::page.page',
-      'oneToOne',
-      'api::banner.banner'
-    >;
-    categories: Attribute.Relation<
-      'api::page.page',
-      'oneToMany',
-      'api::category.category'
-    >;
-    categories_title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    categories_subtitle: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    categories_cta: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    categories_cta_url: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    seo_metadate: Attribute.Component<'seo.metadate'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    slug: Attribute.UID<'api::page.page', 'name'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    aboutus_title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    aboutus_subtitle: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    aboutus_text: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    aboutus_cta: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    aboutus_cta_url: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    for_customer: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::page.page',
-      'oneToMany',
-      'api::page.page'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiPageExperiencePageExperience extends Schema.CollectionType {
-  collectionName: 'page_experiences';
-  info: {
-    singularName: 'page-experience';
-    pluralName: 'page-experiences';
-    displayName: 'Page Experience';
-    description: '';
+    singularName: 'product-page';
+    pluralName: 'product-pages';
+    displayName: 'Page.Product';
   };
   options: {
     draftAndPublish: true;
@@ -1780,21 +1632,27 @@ export interface ApiPageExperiencePageExperience extends Schema.CollectionType {
   attributes: {
     title: Attribute.String &
       Attribute.Required &
+      Attribute.Unique &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    slug: Attribute.UID<'api::page-experience.page-experience', 'title'> &
-      Attribute.Required;
-    cover: Attribute.Media &
+    seo_metadate: Attribute.Component<'seo.metadate'> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    content: Attribute.RichText &
+    slug: Attribute.UID &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    hero: Attribute.Component<'section.hero'> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1802,12 +1660,13 @@ export interface ApiPageExperiencePageExperience extends Schema.CollectionType {
         };
       }>;
     link_list: Attribute.Component<'section.image-link-list'> &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    seo_metadata: Attribute.Component<'seo.metadate'> &
+    features: Attribute.Component<'section.feature-list'> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1818,21 +1677,21 @@ export interface ApiPageExperiencePageExperience extends Schema.CollectionType {
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::page-experience.page-experience',
+      'api::product-page.product-page',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::page-experience.page-experience',
+      'api::product-page.product-page',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     localizations: Attribute.Relation<
-      'api::page-experience.page-experience',
+      'api::product-page.product-page',
       'oneToMany',
-      'api::page-experience.page-experience'
+      'api::product-page.product-page'
     >;
     locale: Attribute.String;
   };
@@ -1860,13 +1719,12 @@ declare module '@strapi/types' {
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::booking.booking': ApiBookingBooking;
       'api::category.category': ApiCategoryCategory;
-      'api::experience.experience': ApiExperienceExperience;
+      'api::experience-page.experience-page': ApiExperiencePageExperiencePage;
       'api::faq-group.faq-group': ApiFaqGroupFaqGroup;
-      'api::faq-item.faq-item': ApiFaqItemFaqItem;
+      'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::itinerary.itinerary': ApiItineraryItinerary;
       'api::open-question.open-question': ApiOpenQuestionOpenQuestion;
-      'api::page.page': ApiPagePage;
-      'api::page-experience.page-experience': ApiPageExperiencePageExperience;
+      'api::product-page.product-page': ApiProductPageProductPage;
     }
   }
 }
