@@ -1,5 +1,44 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface BookingAmount extends Schema.Component {
+  collectionName: 'components_booking_amounts';
+  info: {
+    displayName: 'Amount';
+    icon: 'plus';
+    description: '';
+  };
+  attributes: {
+    usd: Attribute.Decimal & Attribute.Required;
+    brl: Attribute.Decimal & Attribute.Required;
+  };
+}
+
+export interface BookingArrangement extends Schema.Component {
+  collectionName: 'components_booking_arrangements';
+  info: {
+    displayName: 'Arrangement';
+  };
+  attributes: {
+    datetime: Attribute.DateTime & Attribute.Required;
+    store: Attribute.Component<'booking.store'> & Attribute.Required;
+  };
+}
+
+export interface BookingCancelation extends Schema.Component {
+  collectionName: 'components_booking_cancelations';
+  info: {
+    displayName: 'Cancelation';
+    icon: 'thumbDown';
+    description: '';
+  };
+  attributes: {
+    deadline: Attribute.DateTime & Attribute.Required;
+    cancelled_by: Attribute.String;
+    datetime: Attribute.DateTime;
+    ip: Attribute.String;
+  };
+}
+
 export interface BookingCar extends Schema.Component {
   collectionName: 'components_car_cars';
   info: {
@@ -8,12 +47,57 @@ export interface BookingCar extends Schema.Component {
     description: '';
   };
   attributes: {
-    model: Attribute.String;
-    transmission_type: Attribute.String;
-    quantity_of_passengers: Attribute.Integer;
-    quantity_of_baggages: Attribute.Integer;
-    supplier_name: Attribute.String;
-    image_url: Attribute.String;
+    model: Attribute.String & Attribute.Required;
+    group: Attribute.String & Attribute.Required;
+    image_url: Attribute.String & Attribute.Required;
+    transmission_type: Attribute.String & Attribute.Required;
+    air_conditioning: Attribute.Boolean & Attribute.Required;
+    quantity_of_baggages: Attribute.Integer & Attribute.Required;
+    quantity_of_passengers: Attribute.Integer & Attribute.Required;
+    free_km: Attribute.Boolean & Attribute.Required;
+  };
+}
+
+export interface BookingConductor extends Schema.Component {
+  collectionName: 'components_booking_conductors';
+  info: {
+    displayName: 'conductor';
+    icon: 'user';
+  };
+  attributes: {
+    document: Attribute.String & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    surname: Attribute.String & Attribute.Required;
+    email: Attribute.String;
+    telephone: Attribute.String;
+  };
+}
+
+export interface BookingIssue extends Schema.Component {
+  collectionName: 'components_booking_issues';
+  info: {
+    displayName: 'Issue';
+    icon: 'chartBubble';
+    description: '';
+  };
+  attributes: {
+    user: Attribute.String;
+    datetime: Attribute.DateTime;
+    ip: Attribute.String;
+  };
+}
+
+export interface BookingPayment extends Schema.Component {
+  collectionName: 'components_booking_payments';
+  info: {
+    displayName: 'Payment';
+    icon: 'alien';
+  };
+  attributes: {
+    deadline: Attribute.DateTime & Attribute.Required;
+    prepaid: Attribute.Boolean & Attribute.Required;
+    method: Attribute.String & Attribute.Required;
+    status: Attribute.String & Attribute.Required;
   };
 }
 
@@ -25,18 +109,15 @@ export interface BookingReservationItems extends Schema.Component {
     description: '';
   };
   attributes: {
-    fee_included: Attribute.Boolean;
-    description: Attribute.Text;
-    fee_type: Attribute.String;
-    amount: Attribute.Decimal;
-    equivalent_amount: Attribute.Decimal;
-    code: Attribute.String;
-    prepayment: Attribute.Boolean;
-    amount_in_percentage: Attribute.Decimal;
-    quantity: Attribute.Integer;
-    total_amount_payment: Attribute.Decimal;
-    total_amount_equivalent: Attribute.Decimal;
-    payment_at_destination: Attribute.Boolean;
+    fee_included: Attribute.Boolean & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    fee_type: Attribute.String & Attribute.Required;
+    amount: Attribute.Component<'booking.amount'> & Attribute.Required;
+    code: Attribute.String & Attribute.Required;
+    prepayment: Attribute.Boolean & Attribute.Required;
+    quantity: Attribute.Decimal & Attribute.Required;
+    item_type: Attribute.String & Attribute.Required;
+    payment_at_destination: Attribute.Boolean & Attribute.Required;
   };
 }
 
@@ -48,8 +129,27 @@ export interface BookingStore extends Schema.Component {
     description: '';
   };
   attributes: {
+    name: Attribute.String & Attribute.Required;
+    country: Attribute.String;
     city: Attribute.String;
-    address: Attribute.String;
+    address: Attribute.String & Attribute.Required;
+    latitude: Attribute.String;
+    longitude: Attribute.String;
+    telephone: Attribute.String;
+    opening_hours: Attribute.String;
+  };
+}
+
+export interface BookingSupplier extends Schema.Component {
+  collectionName: 'components_booking_suppliers';
+  info: {
+    displayName: 'Supplier';
+    icon: 'house';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    iata: Attribute.String & Attribute.Required;
   };
 }
 
@@ -153,9 +253,16 @@ export interface SeoMetadate extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'booking.amount': BookingAmount;
+      'booking.arrangement': BookingArrangement;
+      'booking.cancelation': BookingCancelation;
       'booking.car': BookingCar;
+      'booking.conductor': BookingConductor;
+      'booking.issue': BookingIssue;
+      'booking.payment': BookingPayment;
       'booking.reservation-items': BookingReservationItems;
       'booking.store': BookingStore;
+      'booking.supplier': BookingSupplier;
       'component.cta': ComponentCta;
       'component.feature': ComponentFeature;
       'component.image-link': ComponentImageLink;

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_booking_issues",
+  "info": {
+    "displayName": "Issue",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "user": {
+      "type": "string",
+      "required": false
+    },
+    "datetime": {
+      "type": "datetime",
+      "required": false
+    },
+    "ip": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

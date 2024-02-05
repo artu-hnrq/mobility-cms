@@ -7,11 +7,37 @@
   },
   "options": {},
   "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": false
+    },
     "city": {
-      "type": "string"
+      "type": "string",
+      "required": false
     },
     "address": {
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "latitude": {
+      "type": "string",
+      "required": false
+    },
+    "longitude": {
+      "type": "string",
+      "required": false
+    },
+    "telephone": {
+      "type": "string",
+      "required": false
+    },
+    "opening_hours": {
+      "type": "string",
+      "required": false
     }
   }
 }

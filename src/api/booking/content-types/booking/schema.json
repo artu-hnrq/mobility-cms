@@ -17,118 +17,181 @@
   },
   "attributes": {
     "booking_id": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "type": "string",
-      "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "pick_up_datetime": {
-      "type": "datetime",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
       "required": true
     },
-    "return_datetime": {
-      "type": "datetime",
+    "supplier": {
+      "type": "component",
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "required": true
-    },
-    "creation_date_and_time": {
-      "type": "datetime",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
-    "conductor_name": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
-    "form_of_payment": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
-    "daily_price": {
-      "type": "decimal",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
-    "total_amount": {
-      "type": "decimal",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+      "component": "booking.supplier",
       "required": true
     },
     "car": {
       "type": "component",
       "repeatable": false,
-      "component": "booking.car",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
+      "component": "booking.car",
       "required": true
     },
-    "pickup_store": {
-      "type": "component",
-      "repeatable": false,
-      "component": "booking.store",
+    "creation_datetime": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
+      "type": "datetime",
       "required": true
+    },
+    "payment": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "booking.payment",
+      "required": true
+    },
+    "cancelation": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "booking.cancelation",
+      "required": true
+    },
+    "issue": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "booking.issue",
+      "required": true
+    },
+    "number_of_days": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "integer"
+    },
+    "status": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "type_of_protection": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "comment": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "total_amount": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "booking.amount",
+      "required": true
+    },
+    "conductors": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "component": "booking.conductor"
     },
     "reservation_items": {
       "type": "component",
       "repeatable": true,
-      "component": "booking.reservation-items",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "return_store": {
-      "type": "component",
-      "repeatable": false,
-      "component": "booking.store",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
+      "component": "booking.reservation-items"
+    },
+    "pickup": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "booking.arrangement",
+      "required": true
+    },
+    "return": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "booking.arrangement",
+      "required": true
+    },
+    "franchise": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "required": true
+    },
+    "daily_price": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "float",
       "required": true
     }
   }

@@ -8,40 +8,42 @@
   "options": {},
   "attributes": {
     "fee_included": {
-      "type": "boolean"
+      "type": "boolean",
+      "required": true
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "fee_type": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "amount": {
-      "type": "decimal"
-    },
-    "equivalent_amount": {
-      "type": "decimal"
+      "type": "component",
+      "repeatable": false,
+      "component": "booking.amount",
+      "required": true
     },
     "code": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "prepayment": {
-      "type": "boolean"
-    },
-    "amount_in_percentage": {
-      "type": "decimal"
+      "type": "boolean",
+      "required": true
     },
     "quantity": {
-      "type": "integer"
+      "type": "decimal",
+      "required": true
     },
-    "total_amount_payment": {
-      "type": "decimal"
-    },
-    "total_amount_equivalent": {
-      "type": "decimal"
+    "item_type": {
+      "type": "string",
+      "required": true
     },
     "payment_at_destination": {
-      "type": "boolean"
+      "type": "boolean",
+      "required": true
     }
   }
 }

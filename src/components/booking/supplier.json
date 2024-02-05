@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_booking_suppliers",
+  "info": {
+    "displayName": "Supplier",
+    "icon": "house",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "iata": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_booking_payments",
+  "info": {
+    "displayName": "Payment",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "deadline": {
+      "type": "datetime",
+      "required": true
+    },
+    "prepaid": {
+      "type": "boolean",
+      "required": true
+    },
+    "method": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -983,49 +983,7 @@ export interface ApiBookingBooking extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    pick_up_datetime: Attribute.DateTime &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    return_datetime: Attribute.DateTime &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    creation_date_and_time: Attribute.DateTime &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    conductor_name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    form_of_payment: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    daily_price: Attribute.Decimal &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    total_amount: Attribute.Decimal &
+    supplier: Attribute.Component<'booking.supplier'> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1039,7 +997,67 @@ export interface ApiBookingBooking extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    pickup_store: Attribute.Component<'booking.store'> &
+    creation_datetime: Attribute.DateTime &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    payment: Attribute.Component<'booking.payment'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    cancelation: Attribute.Component<'booking.cancelation'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    issue: Attribute.Component<'booking.issue'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    number_of_days: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    status: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    type_of_protection: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    comment: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    total_amount: Attribute.Component<'booking.amount'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    conductors: Attribute.Component<'booking.conductor', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1052,7 +1070,28 @@ export interface ApiBookingBooking extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    return_store: Attribute.Component<'booking.store'> &
+    pickup: Attribute.Component<'booking.arrangement'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    return: Attribute.Component<'booking.arrangement'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    franchise: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    daily_price: Attribute.Float &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {

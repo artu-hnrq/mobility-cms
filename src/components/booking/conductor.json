@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_booking_conductors",
+  "info": {
+    "displayName": "conductor",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "document": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "surname": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string"
+    },
+    "telephone": {
+      "type": "string"
+    }
+  }
+}

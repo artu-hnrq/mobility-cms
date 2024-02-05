@@ -8,22 +8,36 @@
   "options": {},
   "attributes": {
     "model": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "transmission_type": {
-      "type": "string"
-    },
-    "quantity_of_passengers": {
-      "type": "integer"
-    },
-    "quantity_of_baggages": {
-      "type": "integer"
-    },
-    "supplier_name": {
-      "type": "string"
+    "group": {
+      "type": "string",
+      "required": true
     },
     "image_url": {
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "transmission_type": {
+      "type": "string",
+      "required": true
+    },
+    "air_conditioning": {
+      "type": "boolean",
+      "required": true
+    },
+    "quantity_of_baggages": {
+      "type": "integer",
+      "required": true
+    },
+    "quantity_of_passengers": {
+      "type": "integer",
+      "required": true
+    },
+    "free_km": {
+      "type": "boolean",
+      "required": true
     }
   }
 }

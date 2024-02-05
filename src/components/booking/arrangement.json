@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_booking_arrangements",
+  "info": {
+    "displayName": "Arrangement"
+  },
+  "options": {},
+  "attributes": {
+    "datetime": {
+      "type": "datetime",
+      "required": true
+    },
+    "store": {
+      "type": "component",
+      "repeatable": false,
+      "component": "booking.store",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_booking_cancelations",
+  "info": {
+    "displayName": "Cancelation",
+    "icon": "thumbDown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "deadline": {
+      "type": "datetime",
+      "required": true
+    },
+    "cancelled_by": {
+      "type": "string"
+    },
+    "datetime": {
+      "type": "datetime"
+    },
+    "ip": {
+      "type": "string"
+    }
+  }
+}

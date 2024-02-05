@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_booking_amounts",
+  "info": {
+    "displayName": "Amount",
+    "icon": "plus",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "usd": {
+      "type": "decimal",
+      "required": true
+    },
+    "brl": {
+      "type": "decimal",
+      "required": true
+    }
+  }
+}
