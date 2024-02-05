@@ -250,6 +250,33 @@ export interface SeoMetadate extends Schema.Component {
   };
 }
 
+export interface UserClient extends Schema.Component {
+  collectionName: 'components_user_clients';
+  info: {
+    displayName: 'Client';
+    icon: 'user';
+  };
+  attributes: {
+    full_name: Attribute.String & Attribute.Required;
+    agency: Attribute.String & Attribute.Required;
+    cnpj: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    phone: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface UserCredentialsMobility extends Schema.Component {
+  collectionName: 'components_user_credentials_mobilities';
+  info: {
+    displayName: 'Credentials Mobility';
+    icon: 'shield';
+  };
+  attributes: {
+    login: Attribute.String & Attribute.Required;
+    password: Attribute.String & Attribute.Required & Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -270,6 +297,8 @@ declare module '@strapi/types' {
       'section.hero': SectionHero;
       'section.image-link-list': SectionImageLinkList;
       'seo.metadate': SeoMetadate;
+      'user.client': UserClient;
+      'user.credentials-mobility': UserCredentialsMobility;
     }
   }
 }

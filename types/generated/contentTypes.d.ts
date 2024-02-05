@@ -1026,6 +1026,7 @@ export interface ApiBookingBooking extends Schema.CollectionType {
         };
       }>;
     number_of_days: Attribute.Integer &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
