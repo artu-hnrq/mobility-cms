@@ -1,0 +1,206 @@
+{
+	"version": 2,
+	"data": {
+		"api::faq-item.faq-item": {
+			"1": {
+				"id": 1,
+				"title": "O que é necessário para aluguel?",
+				"summary": "Idade mínima: 25 anos para a maioria dos destinos e categorias de carro.",
+				"content": "# Idade mínima: 25 anos para a maioria dos destinos e categorias de carro.\nAlguns países/locadoras/categorias possuem regras especiais e podem exigir condutores com idade diferente.\nAlgumas locadoras permitem que condutores menores de 25 anos retirem o carro mediante a uma taxa adicional.\nEm caso de dúvidas ou mais detalhes contate nossa central de atendimento no e-mail reservas@mobility.com.br ou Whatsapp 11 50917772\n\n# Carteira nacional de habilitação\nAs locadoras exigem que o condutor apresente sua carteira nacional de habilitação original e válida por no mínimo o período total da locação.\nPara locações no exterior documentos digitais (CNH digital) não são aceitos.\n\nAlguns países exigem que o condutor apresente a PID (Permissão internacional para dirigir) junto com a habilitação nacional para a retirada do carro. Alguns países que exigem este documento estão descritos nos nossos [termos e condições](link)\n\n![foto.png](http://localhost:1337/uploads/foto_52bc06ce84.png)\n\n# Exigências\nTodas as locadoras exigem que o condutor apresente um cartão de crédito físico com seu nome registrado na tarjeta. Este cartão deve ser emitido por uma instituição bancária e possuir um limite habilitado para bloqueio de caução/pré-autorização de segurança\n\n# Locação no exterior\nPara locações no exterior é necessário que o cartão de crédito apresentado seja internacional. Cartões de bancos digitais podem não ser aceitos.\n\n# Caução\nO valor do bloqueio caução pode variar de acordo com a locadora, país, categoria e/ou tipo de tarifa reservada.\nEm caso de dúvidas ou mais detalhes contate nossa central de atendimento no e-mail [reservas@mobility.com.br](link) ou Whatsapp [(11) 95091-7772](link)",
+				"slug": "o-que-e-necessario-para-aluguel",
+				"createdAt": "2024-01-30T02:11:00.932Z",
+				"updatedAt": "2024-02-02T19:17:42.357Z",
+				"publishedAt": "2024-01-30T02:11:01.704Z",
+				"locale": "en",
+				"group": 1,
+				"seo_metadata": 1,
+				"localizations": [],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"2": {
+				"id": 2,
+				"title": "Qual a idade mínima para reservar um carro?",
+				"summary": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.",
+				"content": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.",
+				"slug": "qual-a-idade-minima-para-reservar-um-carro",
+				"createdAt": "2024-01-30T02:12:00.862Z",
+				"updatedAt": "2024-01-30T02:12:01.732Z",
+				"publishedAt": "2024-01-30T02:12:01.728Z",
+				"locale": "en",
+				"group": 1,
+				"seo_metadata": 2,
+				"localizations": [],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"3": {
+				"id": 3,
+				"title": "Existe uma taxa de reserva?",
+				"summary": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.",
+				"content": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.\n\nLorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.\n\nLorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.",
+				"slug": "existe-uma-taxa-de-reserva",
+				"createdAt": "2024-01-30T02:12:42.322Z",
+				"updatedAt": "2024-01-30T02:12:43.782Z",
+				"publishedAt": "2024-01-30T02:12:43.779Z",
+				"locale": "en",
+				"group": 1,
+				"seo_metadata": 3,
+				"localizations": [],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"4": {
+				"id": 4,
+				"title": "Qual é a cobertura básica incluída?",
+				"summary": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.",
+				"content": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.\nLorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.\n\n\nLorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.",
+				"slug": "qual-e-a-cobertura-basica-incluida",
+				"createdAt": "2024-01-30T02:13:15.661Z",
+				"updatedAt": "2024-01-30T02:13:16.772Z",
+				"publishedAt": "2024-01-30T02:13:16.767Z",
+				"locale": "en",
+				"group": 2,
+				"seo_metadata": 4,
+				"localizations": [],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"5": {
+				"id": 5,
+				"title": "Como devo proceder em caso de acidente?",
+				"summary": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.",
+				"content": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.\nLorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.\n\n\nLorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.",
+				"slug": "como-devo-proceder-em-caso-de-acidente",
+				"createdAt": "2024-01-30T02:13:41.143Z",
+				"updatedAt": "2024-01-30T02:13:41.877Z",
+				"publishedAt": "2024-01-30T02:13:41.870Z",
+				"locale": "en",
+				"group": 2,
+				"seo_metadata": 5,
+				"localizations": [],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"6": {
+				"id": 6,
+				"title": "Qual é a política de cobertura?",
+				"summary": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.",
+				"content": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.",
+				"slug": "qual-e-a-politica-de-cobertura",
+				"createdAt": "2024-01-30T02:14:10.707Z",
+				"updatedAt": "2024-01-30T02:14:11.461Z",
+				"publishedAt": "2024-01-30T02:14:11.457Z",
+				"locale": "en",
+				"group": 2,
+				"seo_metadata": 6,
+				"localizations": [],
+				"createdBy": null,
+				"updatedBy": null
+			}
+		},
+		"api::faq-group.faq-group": {
+			"1": {
+				"id": 1,
+				"title": "Reserva",
+				"presentation_mode": "Both",
+				"createdAt": "2024-01-30T01:48:52.917Z",
+				"updatedAt": "2024-02-04T15:37:11.262Z",
+				"publishedAt": "2024-01-30T01:48:55.044Z",
+				"locale": "en",
+				"slug": "reserva",
+				"image": 26,
+				"pages": [
+					1,
+					2,
+					3
+				],
+				"localizations": [],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"2": {
+				"id": 2,
+				"title": "Cobertura",
+				"presentation_mode": "Both",
+				"createdAt": "2024-01-30T01:50:02.582Z",
+				"updatedAt": "2024-01-31T23:05:43.771Z",
+				"publishedAt": "2024-01-31T23:05:43.767Z",
+				"locale": "en",
+				"slug": "cobertura",
+				"image": 8,
+				"pages": [
+					4,
+					5,
+					6
+				],
+				"localizations": [],
+				"createdBy": null,
+				"updatedBy": null
+			}
+		},
+		"seo.metadate": {
+			"1": {
+				"id": 1,
+				"description": "O que é necessário para aluguel?",
+				"title": "O que é necessário para aluguel?"
+			},
+			"2": {
+				"id": 2,
+				"description": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.",
+				"title": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis."
+			},
+			"3": {
+				"id": 3,
+				"description": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.",
+				"title": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis."
+			},
+			"4": {
+				"id": 4,
+				"description": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.",
+				"title": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis."
+			},
+			"5": {
+				"id": 5,
+				"description": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.",
+				"title": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis."
+			},
+			"6": {
+				"id": 6,
+				"description": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis.",
+				"title": "Lorem ipsum dolor sit amet consectetur. A dictum dui nulla morbi sed ut. Eu nec scelerisque adipiscing diam et. Adipiscing ac ut lacus fermentum ipsum curabitur mattis."
+			}
+		},
+		"plugin::upload.file": {
+			"8": {
+				"id": 8,
+				"name": "securitysecurity.png",
+				"alternativeText": null,
+				"caption": null,
+				"hash": "securitysecurity_25398a8fe7",
+				"ext": ".png",
+				"mime": "image/png",
+				"url": "/uploads/securitysecurity_25398a8fe7.png",
+				"createdAt": "2024-01-30T01:49:53.789Z",
+				"updatedAt": "2024-01-30T01:49:53.789Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"26": {
+				"id": 26,
+				"name": "car_rental.png",
+				"alternativeText": null,
+				"caption": null,
+				"hash": "car_rental_3896421eac",
+				"ext": ".png",
+				"mime": "image/png",
+				"url": "/uploads/car_rental_3896421eac.png",
+				"createdAt": "2024-02-04T15:37:07.853Z",
+				"updatedAt": "2024-02-04T15:37:07.853Z",
+				"createdBy": null,
+				"updatedBy": null
+			}
+		},
+		"plugin::upload.folder": {}
+	}
+}
