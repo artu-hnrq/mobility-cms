@@ -1305,6 +1305,13 @@ export interface ApiFaqGroupFaqGroup extends Schema.CollectionType {
       'oneToMany',
       'api::faq-item.faq-item'
     >;
+    slug: Attribute.UID<'api::faq-group.faq-group', 'title'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
