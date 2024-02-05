@@ -2,6 +2,12 @@
 'use strict';
 
 module.exports = {
+    'import-export-entries': {
+        enabled: true,
+        config: {
+          // See `Config` section.
+        },
+      },
     'strapi-plugin-populate-deep': {
         config: {
             defaultDepth: 3, // Default is 5
