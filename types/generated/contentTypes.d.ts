@@ -764,6 +764,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    bookings: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::booking.booking'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1092,8 +1097,7 @@ export interface ApiBookingBooking extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    daily_price: Attribute.Float &
-      Attribute.Required &
+    daily_price: Attribute.Component<'booking.amount'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1332,13 +1336,6 @@ export interface ApiFaqGroupFaqGroup extends Schema.CollectionType {
       'oneToMany',
       'api::faq-page.faq-page'
     >;
-    slug: Attribute.UID<'api::faq-group.faq-group', 'title'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
