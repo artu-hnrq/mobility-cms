@@ -177,15 +177,6 @@
       "component": "booking.arrangement",
       "required": true
     },
-    "franchise": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "boolean",
-      "required": true
-    },
     "daily_price": {
       "type": "component",
       "repeatable": false,
@@ -195,6 +186,12 @@
         }
       },
       "component": "booking.amount"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "bookings"
     }
   }
 }

@@ -735,7 +735,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -1090,19 +1089,17 @@ export interface ApiBookingBooking extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    franchise: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     daily_price: Attribute.Component<'booking.amount'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
+    user: Attribute.Relation<
+      'api::booking.booking',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
