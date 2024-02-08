@@ -2293,7 +2293,6 @@ export interface ApiWhitelabelPageWhitelabelPage extends Schema.CollectionType {
       'api::data-whitelabel-request.data-whitelabel-request'
     >;
     logo: Attribute.Media &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
