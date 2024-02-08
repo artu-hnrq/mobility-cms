@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "experience_lists",
+  "info": {
+    "singularName": "experience-list",
+    "pluralName": "experience-lists",
+    "displayName": "Section.Experience List"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "links": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::experience-page.experience-page"
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.section-header"
+    }
+  }
+}

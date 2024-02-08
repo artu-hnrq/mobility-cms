@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blog_post_lists",
+  "info": {
+    "singularName": "blog-post-list",
+    "pluralName": "blog-post-lists",
+    "displayName": "Section.Blog Post List"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "links": {
+      "displayName": "Blog Post",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "link.blog-post",
+      "required": true,
+      "min": 3
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "component.section-header",
+      "required": true
+    }
+  }
+}

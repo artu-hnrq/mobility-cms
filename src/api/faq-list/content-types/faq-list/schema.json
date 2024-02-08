@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faq_lists",
+  "info": {
+    "singularName": "faq-list",
+    "pluralName": "faq-lists",
+    "displayName": "Section.FAQ List",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "links": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq-page.faq-page"
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "component.section-header"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_link_blog_posts",
+  "info": {
+    "displayName": "Blog Post",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blog-post.blog-post"
+    }
+  }
+}

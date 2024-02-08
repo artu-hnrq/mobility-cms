@@ -939,6 +939,11 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    blog_post_list: Attribute.Relation<
+      'api::blog-post.blog-post',
+      'oneToOne',
+      'api::blog-post-list.blog-post-list'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -958,6 +963,63 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
       'api::blog-post.blog-post',
       'oneToMany',
       'api::blog-post.blog-post'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiBlogPostListBlogPostList extends Schema.CollectionType {
+  collectionName: 'blog_post_lists';
+  info: {
+    singularName: 'blog-post-list';
+    pluralName: 'blog-post-lists';
+    displayName: 'Section.Blog Post List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    links: Attribute.Component<'link.blog-post', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<{
+        min: 3;
+      }>;
+    header: Attribute.Component<'component.section-header'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-post-list.blog-post-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-post-list.blog-post-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::blog-post-list.blog-post-list',
+      'oneToMany',
+      'api::blog-post-list.blog-post-list'
     >;
     locale: Attribute.String;
   };
@@ -1269,6 +1331,41 @@ export interface ApiDataWhitelabelRequestDataWhitelabelRequest
   };
 }
 
+export interface ApiExperienceListExperienceList extends Schema.CollectionType {
+  collectionName: 'experience_lists';
+  info: {
+    singularName: 'experience-list';
+    pluralName: 'experience-lists';
+    displayName: 'Section.Experience List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    links: Attribute.Relation<
+      'api::experience-list.experience-list',
+      'oneToMany',
+      'api::experience-page.experience-page'
+    >;
+    header: Attribute.Component<'component.section-header'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::experience-list.experience-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::experience-list.experience-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiExperiencePageExperiencePage extends Schema.CollectionType {
   collectionName: 'experience_pages';
   info: {
@@ -1383,7 +1480,14 @@ export interface ApiFaqGroupFaqGroup extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    page_faqs: Attribute.Relation<
+    slug: Attribute.UID<'api::faq-group.faq-group', 'title'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    faq_pages: Attribute.Relation<
       'api::faq-group.faq-group',
       'oneToMany',
       'api::faq-page.faq-page'
@@ -1407,6 +1511,58 @@ export interface ApiFaqGroupFaqGroup extends Schema.CollectionType {
       'api::faq-group.faq-group',
       'oneToMany',
       'api::faq-group.faq-group'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiFaqListFaqList extends Schema.CollectionType {
+  collectionName: 'faq_lists';
+  info: {
+    singularName: 'faq-list';
+    pluralName: 'faq-lists';
+    displayName: 'Section.FAQ List';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    links: Attribute.Relation<
+      'api::faq-list.faq-list',
+      'oneToMany',
+      'api::faq-page.faq-page'
+    >;
+    header: Attribute.Component<'component.section-header'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faq-list.faq-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faq-list.faq-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::faq-list.faq-list',
+      'oneToMany',
+      'api::faq-list.faq-list'
     >;
     locale: Attribute.String;
   };
@@ -1464,7 +1620,7 @@ export interface ApiFaqPageFaqPage extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    faq_group: Attribute.Relation<
+    group: Attribute.Relation<
       'api::faq-page.faq-page',
       'manyToOne',
       'api::faq-group.faq-group'
@@ -1730,6 +1886,64 @@ export interface ApiProductPageProductPage extends Schema.CollectionType {
   };
 }
 
+export interface ApiVehicleImageListVehicleImageList
+  extends Schema.CollectionType {
+  collectionName: 'vehicle_image_lists';
+  info: {
+    singularName: 'vehicle-image-list';
+    pluralName: 'vehicle-image-lists';
+    displayName: 'Section.Vehicle Image List';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    links: Attribute.Component<'link.vehicle-image', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<{
+        min: 3;
+      }>;
+    header: Attribute.Component<'component.section-header'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::vehicle-image-list.vehicle-image-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::vehicle-image-list.vehicle-image-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::vehicle-image-list.vehicle-image-list',
+      'oneToMany',
+      'api::vehicle-image-list.vehicle-image-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiWhitelabelPageWhitelabelPage extends Schema.CollectionType {
   collectionName: 'whitelabel_pages';
   info: {
@@ -1816,15 +2030,19 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::banner.banner': ApiBannerBanner;
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
+      'api::blog-post-list.blog-post-list': ApiBlogPostListBlogPostList;
       'api::booking.booking': ApiBookingBooking;
       'api::category.category': ApiCategoryCategory;
       'api::data-whitelabel-request.data-whitelabel-request': ApiDataWhitelabelRequestDataWhitelabelRequest;
+      'api::experience-list.experience-list': ApiExperienceListExperienceList;
       'api::experience-page.experience-page': ApiExperiencePageExperiencePage;
       'api::faq-group.faq-group': ApiFaqGroupFaqGroup;
+      'api::faq-list.faq-list': ApiFaqListFaqList;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::itinerary.itinerary': ApiItineraryItinerary;
       'api::open-question.open-question': ApiOpenQuestionOpenQuestion;
       'api::product-page.product-page': ApiProductPageProductPage;
+      'api::vehicle-image-list.vehicle-image-list': ApiVehicleImageListVehicleImageList;
       'api::whitelabel-page.whitelabel-page': ApiWhitelabelPageWhitelabelPage;
     }
   }

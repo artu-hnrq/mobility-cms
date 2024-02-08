@@ -158,10 +158,12 @@ export interface ComponentCta extends Schema.Component {
   info: {
     displayName: 'cta';
     icon: 'quote';
+    description: '';
   };
   attributes: {
     text: Attribute.String & Attribute.Required;
     url: Attribute.String & Attribute.Required;
+    type: Attribute.Enumeration<['Button', 'Link']> & Attribute.Required;
   };
 }
 
@@ -187,6 +189,49 @@ export interface ComponentImageLink extends Schema.Component {
   attributes: {
     url: Attribute.String & Attribute.Required;
     title: Attribute.String & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
+  };
+}
+
+export interface ComponentSectionHeader extends Schema.Component {
+  collectionName: 'components_component_section_headers';
+  info: {
+    displayName: 'Section Header';
+    description: '';
+    icon: 'alien';
+  };
+  attributes: {
+    heading: Attribute.String & Attribute.Required;
+    Summary: Attribute.Text;
+    cta: Attribute.Component<'component.cta'>;
+  };
+}
+
+export interface LinkBlogPost extends Schema.Component {
+  collectionName: 'components_link_blog_posts';
+  info: {
+    displayName: 'Blog Post';
+    icon: 'link';
+  };
+  attributes: {
+    image: Attribute.Media & Attribute.Required;
+    page: Attribute.Relation<
+      'link.blog-post',
+      'oneToOne',
+      'api::blog-post.blog-post'
+    >;
+  };
+}
+
+export interface LinkVehicleImage extends Schema.Component {
+  collectionName: 'components_link_vehicle_images';
+  info: {
+    displayName: 'Vehicle Image';
+    icon: 'car';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
   };
 }
@@ -293,6 +338,9 @@ declare module '@strapi/types' {
       'component.cta': ComponentCta;
       'component.feature': ComponentFeature;
       'component.image-link': ComponentImageLink;
+      'component.section-header': ComponentSectionHeader;
+      'link.blog-post': LinkBlogPost;
+      'link.vehicle-image': LinkVehicleImage;
       'section.feature-list': SectionFeatureList;
       'section.hero': SectionHero;
       'section.image-link-list': SectionImageLinkList;

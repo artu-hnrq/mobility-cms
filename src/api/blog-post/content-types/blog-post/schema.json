@@ -83,6 +83,11 @@
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "blog_post_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blog-post-list.blog-post-list"
     }
   }
 }

@@ -64,11 +64,11 @@
       "component": "seo.metadate",
       "required": true
     },
-    "faq_group": {
+    "group": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::faq-group.faq-group",
-      "inversedBy": "page_faqs"
+      "inversedBy": "faq_pages"
     }
   }
 }

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_component_section_headers",
+  "info": {
+    "displayName": "Section Header",
+    "description": "",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "Summary": {
+      "type": "text"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.cta"
+    }
+  }
+}
