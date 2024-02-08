@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product-page",
     "pluralName": "product-pages",
-    "displayName": "Page.Product"
+    "displayName": "Page.Product",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -25,17 +26,6 @@
       "unique": true,
       "required": true
     },
-    "seo_metadate": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "seo.metadate",
-      "required": true
-    },
     "slug": {
       "pluginOptions": {
         "i18n": {
@@ -43,40 +33,23 @@
         }
       },
       "type": "uid",
-      "required": true
+      "required": true,
+      "targetField": "title"
     },
     "hero": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.hero",
-      "required": true
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section-banner.section-banner"
     },
-    "link_list": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.image-link-list",
-      "required": true
+    "vehicle_image_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vehicle-image-list.vehicle-image-list"
     },
     "features": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.feature-list",
-      "required": true
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::feature-list.feature-list"
     }
   }
 }

@@ -192,6 +192,18 @@ export interface ComponentFeature extends Schema.Component {
   };
 }
 
+export interface ComponentIcon extends Schema.Component {
+  collectionName: 'components_component_icons';
+  info: {
+    displayName: 'Icon';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    image: Attribute.Media & Attribute.Required;
+  };
+}
+
 export interface ComponentImageLink extends Schema.Component {
   collectionName: 'components_component_image_links';
   info: {
@@ -235,6 +247,22 @@ export interface LinkBlogPost extends Schema.Component {
   };
 }
 
+export interface LinkExperiencePage extends Schema.Component {
+  collectionName: 'components_link_experience_pages';
+  info: {
+    displayName: 'Experience Page';
+    icon: 'link';
+  };
+  attributes: {
+    image: Attribute.Media & Attribute.Required;
+    page: Attribute.Relation<
+      'link.experience-page',
+      'oneToOne',
+      'api::experience-page.experience-page'
+    >;
+  };
+}
+
 export interface LinkVehicleImage extends Schema.Component {
   collectionName: 'components_link_vehicle_images';
   info: {
@@ -245,21 +273,6 @@ export interface LinkVehicleImage extends Schema.Component {
     title: Attribute.String & Attribute.Required;
     url: Attribute.String & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
-  };
-}
-
-export interface SectionFeatureList extends Schema.Component {
-  collectionName: 'components_section_feature_lists';
-  info: {
-    displayName: 'Feature List';
-    icon: 'dashboard';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    image: Attribute.Media;
-    features: Attribute.Component<'component.feature', true> &
-      Attribute.Required;
   };
 }
 
@@ -350,11 +363,12 @@ declare module '@strapi/types' {
       'colorpick.multiple-fields': ColorpickMultipleFields;
       'component.cta': ComponentCta;
       'component.feature': ComponentFeature;
+      'component.icon': ComponentIcon;
       'component.image-link': ComponentImageLink;
       'component.section-header': ComponentSectionHeader;
       'link.blog-post': LinkBlogPost;
+      'link.experience-page': LinkExperiencePage;
       'link.vehicle-image': LinkVehicleImage;
-      'section.feature-list': SectionFeatureList;
       'section.hero': SectionHero;
       'section.image-link-list': SectionImageLinkList;
       'seo.metadate': SeoMetadate;

@@ -1649,6 +1649,228 @@ export interface ApiFaqPageFaqPage extends Schema.CollectionType {
   };
 }
 
+export interface ApiFeatureListFeatureList extends Schema.CollectionType {
+  collectionName: 'feature_lists';
+  info: {
+    singularName: 'feature-list';
+    pluralName: 'feature-lists';
+    displayName: 'Section.Feature List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    header: Attribute.Component<'component.section-header'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    image: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    features: Attribute.Component<'component.feature', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<{
+        min: 2;
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::feature-list.feature-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::feature-list.feature-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::feature-list.feature-list',
+      'oneToMany',
+      'api::feature-list.feature-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiHomePageHomePage extends Schema.SingleType {
+  collectionName: 'home_pages';
+  info: {
+    singularName: 'home-page';
+    pluralName: 'home-pages';
+    displayName: 'Page.Home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    hero: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'api::section-banner.section-banner'
+    >;
+    vehicle_image_list: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'api::vehicle-image-list.vehicle-image-list'
+    >;
+    traits: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'api::icon-list.icon-list'
+    >;
+    about_us: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'api::section-banner.section-banner'
+    >;
+    for_you: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'api::section-banner.section-banner'
+    >;
+    find_us: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'api::section-banner.section-banner'
+    >;
+    how_it_works: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'api::icon-list.icon-list'
+    >;
+    experience_link_list: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'api::experience-list.experience-list'
+    >;
+    auth_access: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'api::section-banner.section-banner'
+    >;
+    blog_post_list: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'api::blog-post-list.blog-post-list'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToMany',
+      'api::home-page.home-page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiIconListIconList extends Schema.CollectionType {
+  collectionName: 'icon_lists';
+  info: {
+    singularName: 'icon-list';
+    pluralName: 'icon-lists';
+    displayName: 'Section.Icon List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    icons_orientation: Attribute.Enumeration<['Portrait', 'Landscape']> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    bg_color: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    icons: Attribute.Component<'component.icon', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<{
+        min: 1;
+      }>;
+    header: Attribute.Component<'component.section-header'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::icon-list.icon-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::icon-list.icon-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::icon-list.icon-list',
+      'oneToMany',
+      'api::icon-list.icon-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiItineraryItinerary extends Schema.CollectionType {
   collectionName: 'itineraries';
   info: {
@@ -1809,6 +2031,7 @@ export interface ApiProductPageProductPage extends Schema.CollectionType {
     singularName: 'product-page';
     pluralName: 'product-pages';
     displayName: 'Page.Product';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1827,41 +2050,28 @@ export interface ApiProductPageProductPage extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    seo_metadate: Attribute.Component<'seo.metadate'> &
+    slug: Attribute.UID<'api::product-page.product-page', 'title'> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    slug: Attribute.UID &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    hero: Attribute.Component<'section.hero'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    link_list: Attribute.Component<'section.image-link-list'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    features: Attribute.Component<'section.feature-list'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    hero: Attribute.Relation<
+      'api::product-page.product-page',
+      'oneToOne',
+      'api::section-banner.section-banner'
+    >;
+    vehicle_image_list: Attribute.Relation<
+      'api::product-page.product-page',
+      'oneToOne',
+      'api::vehicle-image-list.vehicle-image-list'
+    >;
+    features: Attribute.Relation<
+      'api::product-page.product-page',
+      'oneToOne',
+      'api::feature-list.feature-list'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1881,6 +2091,123 @@ export interface ApiProductPageProductPage extends Schema.CollectionType {
       'api::product-page.product-page',
       'oneToMany',
       'api::product-page.product-page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiSectionBannerSectionBanner extends Schema.CollectionType {
+  collectionName: 'section_banners';
+  info: {
+    singularName: 'section-banner';
+    pluralName: 'section-banners';
+    displayName: 'Section.Banner';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    image: Attribute.Media &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    BannerType: Attribute.Enumeration<
+      ['FullWidthImage', 'LeftImageCard', 'RightImageCard', 'BGColorCard']
+    > &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    header: Attribute.Component<'component.section-header'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    paragraphs: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::section-banner.section-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::section-banner.section-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::section-banner.section-banner',
+      'oneToMany',
+      'api::section-banner.section-banner'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiTermsAndConditionsPageTermsAndConditionsPage
+  extends Schema.SingleType {
+  collectionName: 'terms_and_conditions_pages';
+  info: {
+    singularName: 'terms-and-conditions-page';
+    pluralName: 'terms-and-conditions-pages';
+    displayName: 'Page.Terms and Conditions';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    content: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::terms-and-conditions-page.terms-and-conditions-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::terms-and-conditions-page.terms-and-conditions-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::terms-and-conditions-page.terms-and-conditions-page',
+      'oneToMany',
+      'api::terms-and-conditions-page.terms-and-conditions-page'
     >;
     locale: Attribute.String;
   };
@@ -2043,9 +2370,14 @@ declare module '@strapi/types' {
       'api::faq-group.faq-group': ApiFaqGroupFaqGroup;
       'api::faq-list.faq-list': ApiFaqListFaqList;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
+      'api::feature-list.feature-list': ApiFeatureListFeatureList;
+      'api::home-page.home-page': ApiHomePageHomePage;
+      'api::icon-list.icon-list': ApiIconListIconList;
       'api::itinerary.itinerary': ApiItineraryItinerary;
       'api::open-question.open-question': ApiOpenQuestionOpenQuestion;
       'api::product-page.product-page': ApiProductPageProductPage;
+      'api::section-banner.section-banner': ApiSectionBannerSectionBanner;
+      'api::terms-and-conditions-page.terms-and-conditions-page': ApiTermsAndConditionsPageTermsAndConditionsPage;
       'api::vehicle-image-list.vehicle-image-list': ApiVehicleImageListVehicleImageList;
       'api::whitelabel-page.whitelabel-page': ApiWhitelabelPageWhitelabelPage;
     }

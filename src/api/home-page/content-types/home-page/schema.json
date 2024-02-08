@@ -1,0 +1,69 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Page.Home"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "hero": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section-banner.section-banner"
+    },
+    "vehicle_image_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vehicle-image-list.vehicle-image-list"
+    },
+    "traits": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::icon-list.icon-list"
+    },
+    "about_us": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section-banner.section-banner"
+    },
+    "for_you": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section-banner.section-banner"
+    },
+    "find_us": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section-banner.section-banner"
+    },
+    "how_it_works": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::icon-list.icon-list"
+    },
+    "experience_link_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::experience-list.experience-list"
+    },
+    "auth_access": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section-banner.section-banner"
+    },
+    "blog_post_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blog-post-list.blog-post-list"
+    }
+  }
+}
