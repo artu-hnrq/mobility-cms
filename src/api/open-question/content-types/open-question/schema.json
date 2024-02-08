@@ -4,7 +4,7 @@
   "info": {
     "singularName": "open-question",
     "pluralName": "open-questions",
-    "displayName": "Open Question",
+    "displayName": "Data.Open Question",
     "description": ""
   },
   "options": {
@@ -24,68 +24,43 @@
         }
       }
     },
-    "full_name": {
-      "type": "string",
-      "required": false,
+    "client": {
+      "type": "component",
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
-    },
-    "email": {
-      "type": "string",
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "agency": {
-      "type": "string",
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "cnpj": {
-      "type": "string",
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      },
+      "component": "user.client",
+      "required": true
     },
     "subject": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "type": "enumeration",
       "enum": [
         "MobilitySelect",
         "Reservas",
-        "Comissoes",
-        "Duvidas",
+        "Comissões",
+        "Dúvidas",
         "Financeiro",
         "Comercial",
         "SAC"
       ],
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "required": true
     },
     "body": {
-      "type": "text",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "type": "text",
+      "required": true
     }
   }
 }

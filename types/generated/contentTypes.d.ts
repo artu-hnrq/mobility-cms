@@ -968,7 +968,7 @@ export interface ApiBookingBooking extends Schema.CollectionType {
   info: {
     singularName: 'booking';
     pluralName: 'bookings';
-    displayName: 'Booking';
+    displayName: 'Data.Booking';
     description: '';
   };
   options: {
@@ -1209,6 +1209,61 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'api::category.category',
       'oneToMany',
       'api::category.category'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiDataWhitelabelRequestDataWhitelabelRequest
+  extends Schema.CollectionType {
+  collectionName: 'data_whitelabel_requests';
+  info: {
+    singularName: 'data-whitelabel-request';
+    pluralName: 'data-whitelabel-requests';
+    displayName: 'Data.Whitelabel Request';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    date: Attribute.DateTime &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    client: Attribute.Component<'user.client'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::data-whitelabel-request.data-whitelabel-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::data-whitelabel-request.data-whitelabel-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::data-whitelabel-request.data-whitelabel-request',
+      'oneToMany',
+      'api::data-whitelabel-request.data-whitelabel-request'
     >;
     locale: Attribute.String;
   };
@@ -1519,7 +1574,7 @@ export interface ApiOpenQuestionOpenQuestion extends Schema.CollectionType {
   info: {
     singularName: 'open-question';
     pluralName: 'open-questions';
-    displayName: 'Open Question';
+    displayName: 'Data.Open Question';
     description: '';
   };
   options: {
@@ -1537,25 +1592,8 @@ export interface ApiOpenQuestionOpenQuestion extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    full_name: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    email: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    agency: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    cnpj: Attribute.String &
+    client: Attribute.Component<'user.client'> &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1565,13 +1603,14 @@ export interface ApiOpenQuestionOpenQuestion extends Schema.CollectionType {
       [
         'MobilitySelect',
         'Reservas',
-        'Comissoes',
-        'Duvidas',
+        'Comiss\u00F5es',
+        'D\u00FAvidas',
         'Financeiro',
         'Comercial',
         'SAC'
       ]
     > &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1691,6 +1730,72 @@ export interface ApiProductPageProductPage extends Schema.CollectionType {
   };
 }
 
+export interface ApiWhitelabelPageWhitelabelPage extends Schema.CollectionType {
+  collectionName: 'whitelabel_pages';
+  info: {
+    singularName: 'whitelabel-page';
+    pluralName: 'whitelabel-pages';
+    displayName: 'Page.Whitelabel';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    whitelabel_request: Attribute.Relation<
+      'api::whitelabel-page.whitelabel-page',
+      'oneToOne',
+      'api::data-whitelabel-request.data-whitelabel-request'
+    >;
+    logo: Attribute.Media &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    credentials: Attribute.Component<'user.credentials-mobility'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    color: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::whitelabel-page.whitelabel-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::whitelabel-page.whitelabel-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::whitelabel-page.whitelabel-page',
+      'oneToMany',
+      'api::whitelabel-page.whitelabel-page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1713,12 +1818,14 @@ declare module '@strapi/types' {
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::booking.booking': ApiBookingBooking;
       'api::category.category': ApiCategoryCategory;
+      'api::data-whitelabel-request.data-whitelabel-request': ApiDataWhitelabelRequestDataWhitelabelRequest;
       'api::experience-page.experience-page': ApiExperiencePageExperiencePage;
       'api::faq-group.faq-group': ApiFaqGroupFaqGroup;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::itinerary.itinerary': ApiItineraryItinerary;
       'api::open-question.open-question': ApiOpenQuestionOpenQuestion;
       'api::product-page.product-page': ApiProductPageProductPage;
+      'api::whitelabel-page.whitelabel-page': ApiWhitelabelPageWhitelabelPage;
     }
   }
 }

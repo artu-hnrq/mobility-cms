@@ -1,0 +1,368 @@
+[
+	{
+		"error": {
+			"code": "ERR_INVALID_URL",
+			"input": "/uploads/banner_home_b2c_4d065308b2.jpeg",
+			"level": "\u001b[31merror\u001b[39m",
+			"timestamp": "2024-02-08 10:02:07.109"
+		},
+		"data": {
+			"id": 11,
+			"name": "banner-home-b2c.jpeg",
+			"alternativeText": null,
+			"caption": null,
+			"hash": "banner_home_b2c_4d065308b2",
+			"ext": ".jpeg",
+			"mime": "image/jpeg",
+			"url": "/uploads/banner_home_b2c_4d065308b2.jpeg",
+			"createdAt": "2024-01-10T10:22:21.421Z",
+			"updatedAt": "2024-01-10T10:22:21.421Z",
+			"createdBy": null,
+			"updatedBy": null
+		}
+	},
+	{
+		"error": {
+			"code": "ERR_INVALID_URL",
+			"input": "/uploads/banner_home_b2b_36cb997b49.jpeg",
+			"level": "\u001b[31merror\u001b[39m",
+			"timestamp": "2024-02-08 10:02:07.111"
+		},
+		"data": {
+			"id": 16,
+			"name": "banner-home-b2b.jpeg",
+			"alternativeText": null,
+			"caption": null,
+			"hash": "banner_home_b2b_36cb997b49",
+			"ext": ".jpeg",
+			"mime": "image/jpeg",
+			"url": "/uploads/banner_home_b2b_36cb997b49.jpeg",
+			"createdAt": "2024-01-11T15:06:11.178Z",
+			"updatedAt": "2024-01-11T15:06:11.178Z",
+			"createdBy": null,
+			"updatedBy": null
+		}
+	},
+	{
+		"error": {
+			"code": "ERR_INVALID_URL",
+			"input": "/uploads/banner_agent_page_3a8952db42.jpeg",
+			"level": "\u001b[31merror\u001b[39m",
+			"timestamp": "2024-02-08 10:02:07.112"
+		},
+		"data": {
+			"id": 17,
+			"name": "banner-agent-page.jpeg",
+			"alternativeText": null,
+			"caption": null,
+			"hash": "banner_agent_page_3a8952db42",
+			"ext": ".jpeg",
+			"mime": "image/jpeg",
+			"url": "/uploads/banner_agent_page_3a8952db42.jpeg",
+			"createdAt": "2024-01-14T19:38:37.700Z",
+			"updatedAt": "2024-01-14T19:38:37.700Z",
+			"createdBy": null,
+			"updatedBy": null
+		}
+	},
+	{
+		"error": {
+			"code": "ERR_INVALID_URL",
+			"input": "/uploads/about_mobility_banner_5c72398e7b.jpeg",
+			"level": "\u001b[31merror\u001b[39m",
+			"timestamp": "2024-02-08 10:02:07.112"
+		},
+		"data": {
+			"id": 18,
+			"name": "about-mobility-banner.jpeg",
+			"alternativeText": null,
+			"caption": null,
+			"hash": "about_mobility_banner_5c72398e7b",
+			"ext": ".jpeg",
+			"mime": "image/jpeg",
+			"url": "/uploads/about_mobility_banner_5c72398e7b.jpeg",
+			"createdAt": "2024-01-15T10:29:06.630Z",
+			"updatedAt": "2024-01-15T10:29:06.630Z",
+			"createdBy": null,
+			"updatedBy": null
+		}
+	},
+	{
+		"error": {
+			"details": {
+				"errors": [
+					{
+						"path": [
+							"slug"
+						],
+						"message": "slug must be a `string` type, but the final value was: `null`.",
+						"name": "ValidationError"
+					}
+				]
+			},
+			"name": "ValidationError",
+			"message": "slug must be a `string` type, but the final value was: `null`.",
+			"level": "\u001b[31merror\u001b[39m",
+			"timestamp": "2024-02-08 10:02:07.117"
+		},
+		"data": {
+			"id": 2,
+			"name": "Banner - Home (EN)",
+			"createdAt": "2023-12-03T12:17:13.008Z",
+			"updatedAt": "2024-01-14T19:42:38.539Z",
+			"publishedAt": "2023-12-03T13:50:46.137Z",
+			"locale": "en",
+			"title": "It's simple, is Mobility",
+			"subtitle": "All rental companies in one place.",
+			"cta": null,
+			"cta_link": null,
+			"slug": null,
+			"image": 11,
+			"localizations": [
+				1
+			],
+			"createdBy": null,
+			"updatedBy": null
+		}
+	},
+	{
+		"error": {
+			"level": "\u001b[31merror\u001b[39m",
+			"timestamp": "2024-02-08 10:02:07.119"
+		},
+		"data": {
+			"id": 1,
+			"name": "Banner - Home B2C",
+			"createdAt": "2023-12-03T12:16:38.070Z",
+			"updatedAt": "2024-01-14T19:42:38.534Z",
+			"publishedAt": "2023-12-03T13:50:43.462Z",
+			"locale": "pt-BR",
+			"title": "É simples, é mobility",
+			"subtitle": "Todas as locadoras em um único lugar.",
+			"cta": null,
+			"cta_link": null,
+			"slug": "banner-home-b2c",
+			"image": 11,
+			"localizations": [
+				2
+			],
+			"createdBy": null,
+			"updatedBy": null
+		}
+	},
+	{
+		"error": {
+			"level": "\u001b[31merror\u001b[39m",
+			"timestamp": "2024-02-08 10:02:07.121"
+		},
+		"data": {
+			"id": 3,
+			"name": "Banner - Home B2B",
+			"createdAt": "2024-01-11T15:06:54.044Z",
+			"updatedAt": "2024-01-26T00:02:00.617Z",
+			"publishedAt": "2024-01-11T15:06:55.077Z",
+			"locale": "pt-BR",
+			"title": "Tenha uma  página mobility  para sua agência",
+			"subtitle": null,
+			"cta": "QUERO TER MINHA PÁGINA",
+			"cta_link": "/be-a-agent",
+			"slug": "banner-home-b2b",
+			"image": 16,
+			"localizations": [],
+			"createdBy": null,
+			"updatedBy": null
+		}
+	},
+	{
+		"error": {
+			"level": "\u001b[31merror\u001b[39m",
+			"timestamp": "2024-02-08 10:02:07.122"
+		},
+		"data": {
+			"id": 4,
+			"name": "Banner - Be a Agent",
+			"createdAt": "2024-01-14T19:39:16.971Z",
+			"updatedAt": "2024-01-14T19:42:52.920Z",
+			"publishedAt": "2024-01-14T19:39:17.940Z",
+			"locale": "pt-BR",
+			"title": "Encante, converta  e venda",
+			"subtitle": "Tenha o seu ponto de venda online  para aumentar suas conversões.",
+			"cta": "QUERO TER MINHA PÁGINA",
+			"cta_link": "#",
+			"slug": "banner-be-a-agent",
+			"image": 17,
+			"localizations": [],
+			"createdBy": null,
+			"updatedBy": null
+		}
+	},
+	{
+		"error": {
+			"level": "\u001b[31merror\u001b[39m",
+			"timestamp": "2024-02-08 10:02:07.124"
+		},
+		"data": {
+			"id": 5,
+			"name": "Banner - About Mobility",
+			"createdAt": "2024-01-15T10:29:44.927Z",
+			"updatedAt": "2024-01-15T10:30:22.063Z",
+			"publishedAt": "2024-01-15T10:29:45.957Z",
+			"locale": "pt-BR",
+			"title": "Há mais de 20 anos apoiando  agente de viagens",
+			"subtitle": "Bem-vindo a mobility, a plataforma líder em locação de veículos, que conecta seu cliente a uma excelente experiência de viagem.",
+			"cta": null,
+			"cta_link": null,
+			"slug": "banner-about-mobility",
+			"image": 18,
+			"localizations": [],
+			"createdBy": null,
+			"updatedBy": null
+		}
+	},
+	{
+		"error": {
+			"details": {
+				"errors": [
+					{
+						"path": [
+							"name"
+						],
+						"message": "name must be defined.",
+						"name": "ValidationError"
+					},
+					{
+						"path": [
+							"title"
+						],
+						"message": "title must be defined.",
+						"name": "ValidationError"
+					},
+					{
+						"path": [
+							"slug"
+						],
+						"message": "slug must be defined.",
+						"name": "ValidationError"
+					}
+				]
+			},
+			"name": "ValidationError",
+			"message": "3 errors occurred",
+			"level": "\u001b[31merror\u001b[39m",
+			"timestamp": "2024-02-08 10:02:07.127"
+		},
+		"data": {
+			"id": 2,
+			"name": "Banner - Home (EN)",
+			"createdAt": "2023-12-03T12:17:13.008Z",
+			"updatedAt": "2024-01-14T19:42:38.539Z",
+			"publishedAt": "2023-12-03T13:50:46.137Z",
+			"locale": "en",
+			"title": "It's simple, is Mobility",
+			"subtitle": "All rental companies in one place.",
+			"cta": null,
+			"cta_link": null,
+			"slug": null,
+			"image": 11,
+			"localizations": [
+				1
+			],
+			"createdBy": null,
+			"updatedBy": null
+		}
+	},
+	{
+		"error": {
+			"level": "\u001b[31merror\u001b[39m",
+			"timestamp": "2024-02-08 10:02:07.129"
+		},
+		"data": {
+			"id": 1,
+			"name": "Banner - Home B2C",
+			"createdAt": "2023-12-03T12:16:38.070Z",
+			"updatedAt": "2024-01-14T19:42:38.534Z",
+			"publishedAt": "2023-12-03T13:50:43.462Z",
+			"locale": "pt-BR",
+			"title": "É simples, é mobility",
+			"subtitle": "Todas as locadoras em um único lugar.",
+			"cta": null,
+			"cta_link": null,
+			"slug": "banner-home-b2c",
+			"image": 11,
+			"localizations": [
+				2
+			],
+			"createdBy": null,
+			"updatedBy": null
+		}
+	},
+	{
+		"error": {
+			"level": "\u001b[31merror\u001b[39m",
+			"timestamp": "2024-02-08 10:02:07.130"
+		},
+		"data": {
+			"id": 3,
+			"name": "Banner - Home B2B",
+			"createdAt": "2024-01-11T15:06:54.044Z",
+			"updatedAt": "2024-01-26T00:02:00.617Z",
+			"publishedAt": "2024-01-11T15:06:55.077Z",
+			"locale": "pt-BR",
+			"title": "Tenha uma  página mobility  para sua agência",
+			"subtitle": null,
+			"cta": "QUERO TER MINHA PÁGINA",
+			"cta_link": "/be-a-agent",
+			"slug": "banner-home-b2b",
+			"image": 16,
+			"localizations": [],
+			"createdBy": null,
+			"updatedBy": null
+		}
+	},
+	{
+		"error": {
+			"level": "\u001b[31merror\u001b[39m",
+			"timestamp": "2024-02-08 10:02:07.132"
+		},
+		"data": {
+			"id": 4,
+			"name": "Banner - Be a Agent",
+			"createdAt": "2024-01-14T19:39:16.971Z",
+			"updatedAt": "2024-01-14T19:42:52.920Z",
+			"publishedAt": "2024-01-14T19:39:17.940Z",
+			"locale": "pt-BR",
+			"title": "Encante, converta  e venda",
+			"subtitle": "Tenha o seu ponto de venda online  para aumentar suas conversões.",
+			"cta": "QUERO TER MINHA PÁGINA",
+			"cta_link": "#",
+			"slug": "banner-be-a-agent",
+			"image": 17,
+			"localizations": [],
+			"createdBy": null,
+			"updatedBy": null
+		}
+	},
+	{
+		"error": {
+			"level": "\u001b[31merror\u001b[39m",
+			"timestamp": "2024-02-08 10:02:07.133"
+		},
+		"data": {
+			"id": 5,
+			"name": "Banner - About Mobility",
+			"createdAt": "2024-01-15T10:29:44.927Z",
+			"updatedAt": "2024-01-15T10:30:22.063Z",
+			"publishedAt": "2024-01-15T10:29:45.957Z",
+			"locale": "pt-BR",
+			"title": "Há mais de 20 anos apoiando  agente de viagens",
+			"subtitle": "Bem-vindo a mobility, a plataforma líder em locação de veículos, que conecta seu cliente a uma excelente experiência de viagem.",
+			"cta": null,
+			"cta_link": null,
+			"slug": "banner-about-mobility",
+			"image": 18,
+			"localizations": [],
+			"createdBy": null,
+			"updatedBy": null
+		}
+	}
+]
