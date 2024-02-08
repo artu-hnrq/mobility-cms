@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_component_logo_lists",
+  "info": {
+    "displayName": "logo_list"
+  },
+  "options": {},
+  "attributes": {
+    "logos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.logo",
+      "required": true
+    }
+  }
+}

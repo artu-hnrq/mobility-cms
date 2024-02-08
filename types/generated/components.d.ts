@@ -217,6 +217,26 @@ export interface ComponentImageLink extends Schema.Component {
   };
 }
 
+export interface ComponentLogoList extends Schema.Component {
+  collectionName: 'components_component_logo_lists';
+  info: {
+    displayName: 'logo_list';
+  };
+  attributes: {
+    logos: Attribute.Component<'component.logo', true> & Attribute.Required;
+  };
+}
+
+export interface ComponentLogo extends Schema.Component {
+  collectionName: 'components_component_logos';
+  info: {
+    displayName: 'logo';
+  };
+  attributes: {
+    image: Attribute.Media & Attribute.Required;
+  };
+}
+
 export interface ComponentSectionHeader extends Schema.Component {
   collectionName: 'components_component_section_headers';
   info: {
@@ -228,6 +248,19 @@ export interface ComponentSectionHeader extends Schema.Component {
     heading: Attribute.String & Attribute.Required;
     Summary: Attribute.Text;
     cta: Attribute.Component<'component.cta'>;
+  };
+}
+
+export interface ComponentTestimony extends Schema.Component {
+  collectionName: 'components_component_testimonies';
+  info: {
+    displayName: 'Testimony';
+  };
+  attributes: {
+    agent_name: Attribute.String & Attribute.Required;
+    agent_role: Attribute.String & Attribute.Required;
+    agent_company: Attribute.String & Attribute.Required;
+    content: Attribute.Text & Attribute.Required;
   };
 }
 
@@ -365,7 +398,10 @@ declare module '@strapi/types' {
       'component.feature': ComponentFeature;
       'component.icon': ComponentIcon;
       'component.image-link': ComponentImageLink;
+      'component.logo-list': ComponentLogoList;
+      'component.logo': ComponentLogo;
       'component.section-header': ComponentSectionHeader;
+      'component.testimony': ComponentTestimony;
       'link.blog-post': LinkBlogPost;
       'link.experience-page': LinkExperiencePage;
       'link.vehicle-image': LinkVehicleImage;

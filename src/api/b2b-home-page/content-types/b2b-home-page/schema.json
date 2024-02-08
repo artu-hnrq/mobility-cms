@@ -1,42 +1,33 @@
 {
   "kind": "singleType",
-  "collectionName": "home_pages",
+  "collectionName": "b2b_home_pages",
   "info": {
-    "singularName": "home-page",
-    "pluralName": "home-pages",
-    "displayName": "Page.HomeB2C",
+    "singularName": "b2b-home-page",
+    "pluralName": "b2b-home-pages",
+    "displayName": "Page.HomeB2B",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": true
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
     "hero": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::section-banner.section-banner"
     },
-    "vehicle_image_list": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::vehicle-image-list.vehicle-image-list"
-    },
-    "traits": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::icon-list.icon-list"
-    },
     "about_us": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::section-banner.section-banner"
     },
-    "for_you": {
+    "logo_list": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.logo-list"
+    },
+    "become_partner": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::section-banner.section-banner"
@@ -46,25 +37,35 @@
       "relation": "oneToOne",
       "target": "api::section-banner.section-banner"
     },
+    "vehicle_image_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vehicle-image-list.vehicle-image-list"
+    },
     "how_it_works": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::icon-list.icon-list"
-    },
-    "experience_link_list": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::experience-list.experience-list"
-    },
-    "auth_access": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::section-banner.section-banner"
     },
-    "blog_post_list": {
+    "experience_list": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::blog-post-list.blog-post-list"
+      "target": "api::experience-list.experience-list"
+    },
+    "testimonials_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::testimonials-list.testimonials-list"
+    },
+    "obtain_page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section-banner.section-banner"
+    },
+    "faq_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::faq-list.faq-list"
     }
   }
 }

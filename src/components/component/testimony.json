@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_component_testimonies",
+  "info": {
+    "displayName": "Testimony"
+  },
+  "options": {},
+  "attributes": {
+    "agent_name": {
+      "type": "string",
+      "required": true
+    },
+    "agent_role": {
+      "type": "string",
+      "required": true
+    },
+    "agent_company": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

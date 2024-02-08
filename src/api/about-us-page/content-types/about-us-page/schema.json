@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_us_pages",
+  "info": {
+    "singularName": "about-us-page",
+    "pluralName": "about-us-pages",
+    "displayName": "Page.AboutUs"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "hero": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section-banner.section-banner"
+    },
+    "who_we_are": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section-banner.section-banner"
+    },
+    "traits_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::icon-list.icon-list"
+    },
+    "features": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::feature-list.feature-list"
+    }
+  }
+}
