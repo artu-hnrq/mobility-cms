@@ -22,7 +22,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "client": {
       "type": "component",
@@ -33,7 +34,7 @@
         }
       },
       "component": "user.client",
-      "required": true
+      "required": false
     },
     "subject": {
       "pluginOptions": {
@@ -51,7 +52,7 @@
         "Comercial",
         "SAC"
       ],
-      "required": true
+      "required": false
     },
     "body": {
       "pluginOptions": {

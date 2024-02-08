@@ -1965,13 +1965,13 @@ export interface ApiOpenQuestionOpenQuestion extends Schema.CollectionType {
   };
   attributes: {
     date: Attribute.Date &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     client: Attribute.Component<'user.client'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1988,7 +1988,6 @@ export interface ApiOpenQuestionOpenQuestion extends Schema.CollectionType {
         'SAC'
       ]
     > &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
