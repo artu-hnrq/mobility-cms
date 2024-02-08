@@ -153,6 +153,18 @@ export interface BookingSupplier extends Schema.Component {
   };
 }
 
+export interface ColorpickMultipleFields extends Schema.Component {
+  collectionName: 'components_colorpick_multiple_fields';
+  info: {
+    displayName: 'multiple fields';
+  };
+  attributes: {
+    color: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface ComponentCta extends Schema.Component {
   collectionName: 'components_component_ctas';
   info: {
@@ -335,6 +347,7 @@ declare module '@strapi/types' {
       'booking.reservation-items': BookingReservationItems;
       'booking.store': BookingStore;
       'booking.supplier': BookingSupplier;
+      'colorpick.multiple-fields': ColorpickMultipleFields;
       'component.cta': ComponentCta;
       'component.feature': ComponentFeature;
       'component.image-link': ComponentImageLink;

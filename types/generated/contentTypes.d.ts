@@ -1979,12 +1979,16 @@ export interface ApiWhitelabelPageWhitelabelPage extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    color: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'> &
+    color_pick: Attribute.Component<'colorpick.multiple-fields', true> &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
+      }> &
+      Attribute.SetMinMax<{
+        min: 2;
+        max: 2;
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
