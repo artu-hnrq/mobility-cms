@@ -1630,6 +1630,7 @@ export interface ApiExperiencePageExperiencePage extends Schema.CollectionType {
     singularName: 'experience-page';
     pluralName: 'experience-pages';
     displayName: 'Page.Experience';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1663,19 +1664,16 @@ export interface ApiExperiencePageExperiencePage extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    link_list: Attribute.Component<'section.image-link-list'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    seo_metadata: Attribute.Component<'seo.metadate'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    vehicle_image_list: Attribute.Relation<
+      'api::experience-page.experience-page',
+      'oneToOne',
+      'api::vehicle-image-list.vehicle-image-list'
+    >;
+    blog_post_list: Attribute.Relation<
+      'api::experience-page.experience-page',
+      'oneToOne',
+      'api::blog-post-list.blog-post-list'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2238,6 +2236,11 @@ export interface ApiProductPageProductPage extends Schema.CollectionType {
       'api::product-page.product-page',
       'oneToOne',
       'api::feature-list.feature-list'
+    >;
+    experience_list: Attribute.Relation<
+      'api::product-page.product-page',
+      'oneToOne',
+      'api::experience-list.experience-list'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

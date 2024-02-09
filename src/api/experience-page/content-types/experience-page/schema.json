@@ -4,7 +4,8 @@
   "info": {
     "singularName": "experience-page",
     "pluralName": "experience-pages",
-    "displayName": "Page.Experience"
+    "displayName": "Page.Experience",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -51,26 +52,15 @@
         }
       }
     },
-    "link_list": {
-      "type": "component",
-      "repeatable": false,
-      "component": "section.image-link-list",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+    "vehicle_image_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vehicle-image-list.vehicle-image-list"
     },
-    "seo_metadata": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "seo.metadate",
-      "required": true
+    "blog_post_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blog-post-list.blog-post-list"
     }
   }
 }

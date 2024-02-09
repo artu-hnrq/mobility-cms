@@ -50,6 +50,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::feature-list.feature-list"
+    },
+    "experience_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::experience-list.experience-list"
     }
   }
 }
