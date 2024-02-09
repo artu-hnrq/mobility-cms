@@ -116,7 +116,7 @@ export interface BookingReservationItems extends Schema.Component {
     code: Attribute.String & Attribute.Required;
     prepayment: Attribute.Boolean & Attribute.Required;
     quantity: Attribute.Decimal & Attribute.Required;
-    item_type: Attribute.String & Attribute.Required;
+    item_type: Attribute.String;
     payment_at_destination: Attribute.Boolean & Attribute.Required;
   };
 }
@@ -150,18 +150,6 @@ export interface BookingSupplier extends Schema.Component {
   attributes: {
     name: Attribute.String & Attribute.Required;
     iata: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface ColorpickMultipleFields extends Schema.Component {
-  collectionName: 'components_colorpick_multiple_fields';
-  info: {
-    displayName: 'multiple fields';
-  };
-  attributes: {
-    color: Attribute.String &
-      Attribute.Required &
-      Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
@@ -237,13 +225,17 @@ export interface ComponentLogo extends Schema.Component {
   };
 }
 
-export interface ComponentMissionVisionValues extends Schema.Component {
-  collectionName: 'components_component_mission_vision_values';
+export interface ComponentMultipleFields extends Schema.Component {
+  collectionName: 'components_colorpick_multiple_fields';
   info: {
-    displayName: 'Mission Vision Values';
+    displayName: 'multiple color pick';
     description: '';
   };
-  attributes: {};
+  attributes: {
+    color: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+  };
 }
 
 export interface ComponentSectionHeader extends Schema.Component {
@@ -329,37 +321,6 @@ export interface LinkVehicleImage extends Schema.Component {
   };
 }
 
-export interface SectionHero extends Schema.Component {
-  collectionName: 'components_section_heroes';
-  info: {
-    displayName: 'Hero';
-    icon: 'layout';
-    description: '';
-  };
-  attributes: {
-    heading: Attribute.String;
-    summary: Attribute.Text;
-    cta: Attribute.Component<'component.cta'> & Attribute.Required;
-    image: Attribute.Media;
-  };
-}
-
-export interface SectionImageLinkList extends Schema.Component {
-  collectionName: 'components_section_image_link_lists';
-  info: {
-    displayName: 'Image Link List';
-    icon: 'filter';
-    description: '';
-  };
-  attributes: {
-    heading: Attribute.String;
-    summary: Attribute.Text;
-    links: Attribute.Component<'component.image-link', true> &
-      Attribute.Required;
-    cta: Attribute.Component<'component.cta'> & Attribute.Required;
-  };
-}
-
 export interface SeoMetadate extends Schema.Component {
   collectionName: 'components_seo_metadates';
   info: {
@@ -413,22 +374,19 @@ declare module '@strapi/types' {
       'booking.reservation-items': BookingReservationItems;
       'booking.store': BookingStore;
       'booking.supplier': BookingSupplier;
-      'colorpick.multiple-fields': ColorpickMultipleFields;
       'component.cta': ComponentCta;
       'component.feature': ComponentFeature;
       'component.icon': ComponentIcon;
       'component.image-link': ComponentImageLink;
       'component.logo-list': ComponentLogoList;
       'component.logo': ComponentLogo;
-      'component.mission-vision-values': ComponentMissionVisionValues;
+      'component.multiple-fields': ComponentMultipleFields;
       'component.section-header': ComponentSectionHeader;
       'component.testimony': ComponentTestimony;
       'component.values': ComponentValues;
       'link.blog-post': LinkBlogPost;
       'link.experience-page': LinkExperiencePage;
       'link.vehicle-image': LinkVehicleImage;
-      'section.hero': SectionHero;
-      'section.image-link-list': SectionImageLinkList;
       'seo.metadate': SeoMetadate;
       'user.client': UserClient;
       'user.credentials-mobility': UserCredentialsMobility;

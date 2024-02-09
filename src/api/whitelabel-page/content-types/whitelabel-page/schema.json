@@ -52,7 +52,7 @@
           "localized": true
         }
       },
-      "component": "colorpick.multiple-fields",
+      "component": "component.multiple-fields",
       "min": 2,
       "required": true,
       "max": 2

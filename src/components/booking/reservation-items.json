@@ -39,7 +39,7 @@
     },
     "item_type": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "payment_at_destination": {
       "type": "boolean",

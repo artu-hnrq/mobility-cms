@@ -36,17 +36,6 @@
       "relation": "oneToOne",
       "target": "api::feature-list.feature-list"
     },
-    "mission_vision_values": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "component.mission-vision-values",
-      "required": true
-    },
     "mission": {
       "pluginOptions": {
         "i18n": {

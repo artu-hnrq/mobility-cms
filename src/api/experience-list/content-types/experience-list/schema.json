@@ -4,12 +4,17 @@
   "info": {
     "singularName": "experience-list",
     "pluralName": "experience-lists",
-    "displayName": "Section.Experience List"
+    "displayName": "Section.Experience List",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "links": {
       "type": "relation",
@@ -19,7 +24,12 @@
     "header": {
       "type": "component",
       "repeatable": false,
-      "component": "component.section-header"
+      "component": "component.section-header",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

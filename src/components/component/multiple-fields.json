@@ -1,7 +1,8 @@
 {
   "collectionName": "components_colorpick_multiple_fields",
   "info": {
-    "displayName": "multiple fields"
+    "displayName": "multiple color pick",
+    "description": ""
   },
   "options": {},
   "attributes": {

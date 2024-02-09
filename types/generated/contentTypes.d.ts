@@ -822,13 +822,6 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
       'oneToOne',
       'api::feature-list.feature-list'
     >;
-    mission_vision_values: Attribute.Component<'component.mission-vision-values'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     mission: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1595,9 +1588,15 @@ export interface ApiExperienceListExperienceList extends Schema.CollectionType {
     singularName: 'experience-list';
     pluralName: 'experience-lists';
     displayName: 'Section.Experience List';
+    description: '';
   };
   options: {
     draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
     links: Attribute.Relation<
@@ -1605,7 +1604,12 @@ export interface ApiExperienceListExperienceList extends Schema.CollectionType {
       'oneToMany',
       'api::experience-page.experience-page'
     >;
-    header: Attribute.Component<'component.section-header'>;
+    header: Attribute.Component<'component.section-header'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1621,6 +1625,12 @@ export interface ApiExperienceListExperienceList extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::experience-list.experience-list',
+      'oneToMany',
+      'api::experience-list.experience-list'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1842,13 +1852,6 @@ export interface ApiFaqPageFaqPage extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    summary: Attribute.Text &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2232,7 +2235,7 @@ export interface ApiProductPageProductPage extends Schema.CollectionType {
       'oneToOne',
       'api::vehicle-image-list.vehicle-image-list'
     >;
-    features: Attribute.Relation<
+    feature: Attribute.Relation<
       'api::product-page.product-page',
       'oneToOne',
       'api::feature-list.feature-list'
@@ -2544,7 +2547,7 @@ export interface ApiWhitelabelPageWhitelabelPage extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    color_pick: Attribute.Component<'colorpick.multiple-fields', true> &
+    color_pick: Attribute.Component<'component.multiple-fields', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
