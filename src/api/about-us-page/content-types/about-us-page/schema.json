@@ -4,7 +4,8 @@
   "info": {
     "singularName": "about-us-page",
     "pluralName": "about-us-pages",
-    "displayName": "Page.AboutUs"
+    "displayName": "Page.AboutUs",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -34,6 +35,43 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::feature-list.feature-list"
+    },
+    "mission_vision_values": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "component.mission-vision-values",
+      "required": true
+    },
+    "mission": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "vision": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
+    },
+    "values": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "component.values"
     }
   }
 }

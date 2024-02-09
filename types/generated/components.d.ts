@@ -237,6 +237,15 @@ export interface ComponentLogo extends Schema.Component {
   };
 }
 
+export interface ComponentMissionVisionValues extends Schema.Component {
+  collectionName: 'components_component_mission_vision_values';
+  info: {
+    displayName: 'Mission Vision Values';
+    description: '';
+  };
+  attributes: {};
+}
+
 export interface ComponentSectionHeader extends Schema.Component {
   collectionName: 'components_component_section_headers';
   info: {
@@ -261,6 +270,17 @@ export interface ComponentTestimony extends Schema.Component {
     agent_role: Attribute.String & Attribute.Required;
     agent_company: Attribute.String & Attribute.Required;
     content: Attribute.Text & Attribute.Required;
+  };
+}
+
+export interface ComponentValues extends Schema.Component {
+  collectionName: 'components_component_values';
+  info: {
+    displayName: 'values';
+  };
+  attributes: {
+    value_title: Attribute.String;
+    value_description: Attribute.Text & Attribute.Required;
   };
 }
 
@@ -400,8 +420,10 @@ declare module '@strapi/types' {
       'component.image-link': ComponentImageLink;
       'component.logo-list': ComponentLogoList;
       'component.logo': ComponentLogo;
+      'component.mission-vision-values': ComponentMissionVisionValues;
       'component.section-header': ComponentSectionHeader;
       'component.testimony': ComponentTestimony;
+      'component.values': ComponentValues;
       'link.blog-post': LinkBlogPost;
       'link.experience-page': LinkExperiencePage;
       'link.vehicle-image': LinkVehicleImage;

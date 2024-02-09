@@ -791,6 +791,7 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
     singularName: 'about-us-page';
     pluralName: 'about-us-pages';
     displayName: 'Page.AboutUs';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -821,6 +822,31 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
       'oneToOne',
       'api::feature-list.feature-list'
     >;
+    mission_vision_values: Attribute.Component<'component.mission-vision-values'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    mission: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    vision: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    values: Attribute.Component<'component.values', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -923,6 +949,97 @@ export interface ApiB2BHomePageB2BHomePage extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+  };
+}
+
+export interface ApiB2CHomePageB2CHomePage extends Schema.SingleType {
+  collectionName: 'b2c_home_pages';
+  info: {
+    singularName: 'b2c-home-page';
+    pluralName: 'b2c-home-pages';
+    displayName: 'Page.HomeB2C';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    hero: Attribute.Relation<
+      'api::b2c-home-page.b2c-home-page',
+      'oneToOne',
+      'api::section-banner.section-banner'
+    >;
+    vehicle_image_list: Attribute.Relation<
+      'api::b2c-home-page.b2c-home-page',
+      'oneToOne',
+      'api::vehicle-image-list.vehicle-image-list'
+    >;
+    traits: Attribute.Relation<
+      'api::b2c-home-page.b2c-home-page',
+      'oneToOne',
+      'api::icon-list.icon-list'
+    >;
+    about_us: Attribute.Relation<
+      'api::b2c-home-page.b2c-home-page',
+      'oneToOne',
+      'api::section-banner.section-banner'
+    >;
+    for_you: Attribute.Relation<
+      'api::b2c-home-page.b2c-home-page',
+      'oneToOne',
+      'api::section-banner.section-banner'
+    >;
+    find_us: Attribute.Relation<
+      'api::b2c-home-page.b2c-home-page',
+      'oneToOne',
+      'api::section-banner.section-banner'
+    >;
+    how_it_works: Attribute.Relation<
+      'api::b2c-home-page.b2c-home-page',
+      'oneToOne',
+      'api::icon-list.icon-list'
+    >;
+    experience_list: Attribute.Relation<
+      'api::b2c-home-page.b2c-home-page',
+      'oneToOne',
+      'api::experience-list.experience-list'
+    >;
+    auth_access: Attribute.Relation<
+      'api::b2c-home-page.b2c-home-page',
+      'oneToOne',
+      'api::section-banner.section-banner'
+    >;
+    blog_post_list: Attribute.Relation<
+      'api::b2c-home-page.b2c-home-page',
+      'oneToOne',
+      'api::blog-post-list.blog-post-list'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::b2c-home-page.b2c-home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::b2c-home-page.b2c-home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::b2c-home-page.b2c-home-page',
+      'oneToMany',
+      'api::b2c-home-page.b2c-home-page'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1852,97 +1969,6 @@ export interface ApiFeatureListFeatureList extends Schema.CollectionType {
   };
 }
 
-export interface ApiHomePageHomePage extends Schema.SingleType {
-  collectionName: 'home_pages';
-  info: {
-    singularName: 'home-page';
-    pluralName: 'home-pages';
-    displayName: 'Page.HomeB2C';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    hero: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'api::section-banner.section-banner'
-    >;
-    vehicle_image_list: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'api::vehicle-image-list.vehicle-image-list'
-    >;
-    traits: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'api::icon-list.icon-list'
-    >;
-    about_us: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'api::section-banner.section-banner'
-    >;
-    for_you: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'api::section-banner.section-banner'
-    >;
-    find_us: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'api::section-banner.section-banner'
-    >;
-    how_it_works: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'api::icon-list.icon-list'
-    >;
-    experience_link_list: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'api::experience-list.experience-list'
-    >;
-    auth_access: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'api::section-banner.section-banner'
-    >;
-    blog_post_list: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'api::blog-post-list.blog-post-list'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToMany',
-      'api::home-page.home-page'
-    >;
-    locale: Attribute.String;
-  };
-}
-
 export interface ApiIconListIconList extends Schema.CollectionType {
   collectionName: 'icon_lists';
   info: {
@@ -2570,6 +2596,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::b2b-home-page.b2b-home-page': ApiB2BHomePageB2BHomePage;
+      'api::b2c-home-page.b2c-home-page': ApiB2CHomePageB2CHomePage;
       'api::banner.banner': ApiBannerBanner;
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::blog-post-list.blog-post-list': ApiBlogPostListBlogPostList;
@@ -2582,7 +2609,6 @@ declare module '@strapi/types' {
       'api::faq-list.faq-list': ApiFaqListFaqList;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::feature-list.feature-list': ApiFeatureListFeatureList;
-      'api::home-page.home-page': ApiHomePageHomePage;
       'api::icon-list.icon-list': ApiIconListIconList;
       'api::itinerary.itinerary': ApiItineraryItinerary;
       'api::open-question.open-question': ApiOpenQuestionOpenQuestion;

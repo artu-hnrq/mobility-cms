@@ -1,9 +1,9 @@
 {
   "kind": "singleType",
-  "collectionName": "home_pages",
+  "collectionName": "b2c_home_pages",
   "info": {
-    "singularName": "home-page",
-    "pluralName": "home-pages",
+    "singularName": "b2c-home-page",
+    "pluralName": "b2c-home-pages",
     "displayName": "Page.HomeB2C",
     "description": ""
   },
@@ -51,7 +51,7 @@
       "relation": "oneToOne",
       "target": "api::icon-list.icon-list"
     },
-    "experience_link_list": {
+    "experience_list": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::experience-list.experience-list"
