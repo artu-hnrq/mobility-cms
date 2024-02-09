@@ -1184,12 +1184,7 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
         };
       }>;
     slug: Attribute.UID<'api::blog-post.blog-post', 'title'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+      Attribute.Required;
     blog_post_list: Attribute.Relation<
       'api::blog-post.blog-post',
       'oneToOne',
@@ -1225,6 +1220,7 @@ export interface ApiBlogPostListBlogPostList extends Schema.CollectionType {
     singularName: 'blog-post-list';
     pluralName: 'blog-post-lists';
     displayName: 'Section.Blog Post List';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1747,13 +1743,8 @@ export interface ApiFaqGroupFaqGroup extends Schema.CollectionType {
         };
       }>;
     slug: Attribute.UID<'api::faq-group.faq-group', 'title'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    faq_pages: Attribute.Relation<
+      Attribute.Required;
+    pages: Attribute.Relation<
       'api::faq-group.faq-group',
       'oneToMany',
       'api::faq-page.faq-page'
@@ -1865,13 +1856,7 @@ export interface ApiFaqPageFaqPage extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    slug: Attribute.UID<'api::faq-page.faq-page', 'title'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    slug: Attribute.UID<'api::faq-page.faq-page', 'title'> & Attribute.Required;
     seo_metadata: Attribute.Component<'seo.metadate'> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1914,6 +1899,7 @@ export interface ApiFeatureListFeatureList extends Schema.CollectionType {
     singularName: 'feature-list';
     pluralName: 'feature-lists';
     displayName: 'Section.Feature List';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1976,6 +1962,7 @@ export interface ApiIconListIconList extends Schema.CollectionType {
     singularName: 'icon-list';
     pluralName: 'icon-lists';
     displayName: 'Section.Icon List';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1994,12 +1981,7 @@ export interface ApiIconListIconList extends Schema.CollectionType {
         };
       }>;
     bg_color: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+      Attribute.CustomField<'plugin::color-picker.color'>;
     icons: Attribute.Component<'component.icon', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -2219,12 +2201,7 @@ export interface ApiProductPageProductPage extends Schema.CollectionType {
         };
       }>;
     slug: Attribute.UID<'api::product-page.product-page', 'title'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+      Attribute.Required;
     hero: Attribute.Relation<
       'api::product-page.product-page',
       'oneToOne',

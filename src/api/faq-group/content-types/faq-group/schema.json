@@ -54,16 +54,12 @@
       }
     },
     "slug": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+      "pluginOptions": {},
       "type": "uid",
       "required": true,
       "targetField": "title"
     },
-    "faq_pages": {
+    "pages": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq-page.faq-page",

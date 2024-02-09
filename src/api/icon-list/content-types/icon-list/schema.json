@@ -4,7 +4,8 @@
   "info": {
     "singularName": "icon-list",
     "pluralName": "icon-lists",
-    "displayName": "Section.Icon List"
+    "displayName": "Section.Icon List",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -29,11 +30,7 @@
       "required": true
     },
     "bg_color": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+      "pluginOptions": {},
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
       "required": false,

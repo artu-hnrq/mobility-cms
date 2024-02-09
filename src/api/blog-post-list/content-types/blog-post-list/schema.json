@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog-post-list",
     "pluralName": "blog-post-lists",
-    "displayName": "Section.Blog Post List"
+    "displayName": "Section.Blog Post List",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

@@ -35,11 +35,7 @@
       }
     },
     "slug": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+      "pluginOptions": {},
       "type": "uid",
       "targetField": "title",
       "required": true
@@ -59,7 +55,7 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::faq-group.faq-group",
-      "inversedBy": "faq_pages"
+      "inversedBy": "pages"
     }
   }
 }
