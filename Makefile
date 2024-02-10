@@ -27,12 +27,14 @@ EXPORT_FILE_NAME ?= strapi-cms-export
 EXPORT_FILE ?= $(EXPORT_FILE_NAME).tar.gz.enc
 
 # Behavior setup
-EXPORT_FILE_ENCRYPTION_KEY = $(shell cat $(ENV_FILE) | grep -oP 'EXPORT_FILE_ENCRYPTION_KEY=\K.*')
-## PROJECT_NAME ?= $(shell basename $(ROOT_DIR) | tr a-z A-Z)
+PROJECT_NAME ?= $(shell basename $(ROOT_DIR) | tr a-z A-Z)
+EXPORT_FILE_ENCRYPTION_KEY ?= cms
 
 # Executables definition
 GIT ?= git
 NPM ?= npm
+STRAPI ?= $(NPM) run strapi
+
 
 %: # Treat unrecognized targets
 	@ printf "\033[31;1mUnrecognized routine: '$(*)'\033[0m\n"
@@ -87,10 +89,10 @@ veryclean:: clean ## Delete all generated files
 	-rm --force --recursive $(NODE_MODULES)
 
 import:: clean ## Import data from external sources
-	$(NPM) run strapi import -- --file $(EXPORT_FILE) --key $(EXPORT_FILE_ENCRYPTION_KEY) --force
+	$(STRAPI) import -- --file $(EXPORT_FILE) --force --key $(EXPORT_FILE_ENCRYPTION_KEY)
 
 export:: ## Export data to external sources
-	$(NPM) run strapi export -- --file $(EXPORT_FILE_NAME) --key $(EXPORT_FILE_ENCRYPTION_KEY)
+	$(STRAPI) export -- --file $(EXPORT_FILE_NAME) --key $(EXPORT_FILE_ENCRYPTION_KEY)
 
 
 .EXPORT_ALL_VARIABLES:
