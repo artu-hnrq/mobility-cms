@@ -52,15 +52,19 @@ init:: veryclean prepare ## Configure development environment
 up:: build execute ## Build and execute service
 
 build:: clean ## Build service running environment
+	$(NPM) run build
+
+dev:: ## Run application in development mode
+	$(NPM) run dev
 
 execute:: setup run ## Setup and run application
 
-setup:: clean import ## Process source code into an executable program
+setup:: clean compile ## Process source code into an executable program
 
 compile:: ## Treat file generation
 
 run:: ## Launch application locally
-	$(NPM) run develop
+	$(NPM) run start
 
 finish:: ## Stop application execution
 
@@ -91,4 +95,4 @@ export:: ## Export data to external sources
 
 .EXPORT_ALL_VARIABLES:
 .ONESHELL:
-.PHONY: help prepare init up build execute setup compile run finish status ping test release publish deploy clean veryclean
+.PHONY: help prepare init up build dev execute setup compile run finish status ping test release publish deploy clean veryclean
