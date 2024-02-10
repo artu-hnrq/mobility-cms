@@ -1,0 +1,46 @@
+{
+  "kind": "singleType",
+  "collectionName": "be_an_agent_pages",
+  "info": {
+    "singularName": "be-an-agent-page",
+    "pluralName": "be-an-agent-pages",
+    "displayName": "Page.Be An Agent"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "hero": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section-banner.section-banner"
+    },
+    "logo_list": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "component.logo",
+      "required": true,
+      "min": 2
+    },
+    "features": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::feature-list.feature-list"
+    },
+    "faq_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::faq-list.faq-list"
+    }
+  }
+}

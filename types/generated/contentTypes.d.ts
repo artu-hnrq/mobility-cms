@@ -1124,6 +1124,71 @@ export interface ApiBannerBanner extends Schema.CollectionType {
   };
 }
 
+export interface ApiBeAnAgentPageBeAnAgentPage extends Schema.SingleType {
+  collectionName: 'be_an_agent_pages';
+  info: {
+    singularName: 'be-an-agent-page';
+    pluralName: 'be-an-agent-pages';
+    displayName: 'Page.Be An Agent';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    hero: Attribute.Relation<
+      'api::be-an-agent-page.be-an-agent-page',
+      'oneToOne',
+      'api::section-banner.section-banner'
+    >;
+    logo_list: Attribute.Component<'component.logo', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<{
+        min: 2;
+      }>;
+    features: Attribute.Relation<
+      'api::be-an-agent-page.be-an-agent-page',
+      'oneToOne',
+      'api::feature-list.feature-list'
+    >;
+    faq_list: Attribute.Relation<
+      'api::be-an-agent-page.be-an-agent-page',
+      'oneToOne',
+      'api::faq-list.faq-list'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::be-an-agent-page.be-an-agent-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::be-an-agent-page.be-an-agent-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::be-an-agent-page.be-an-agent-page',
+      'oneToMany',
+      'api::be-an-agent-page.be-an-agent-page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiBlogPostBlogPost extends Schema.CollectionType {
   collectionName: 'blog_posts';
   info: {
@@ -2718,6 +2783,7 @@ declare module '@strapi/types' {
       'api::b2b-home-page.b2b-home-page': ApiB2BHomePageB2BHomePage;
       'api::b2c-home-page.b2c-home-page': ApiB2CHomePageB2CHomePage;
       'api::banner.banner': ApiBannerBanner;
+      'api::be-an-agent-page.be-an-agent-page': ApiBeAnAgentPageBeAnAgentPage;
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::blog-post-list.blog-post-list': ApiBlogPostListBlogPostList;
       'api::booking.booking': ApiBookingBooking;
