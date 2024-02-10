@@ -53,17 +53,21 @@
         }
       }
     },
-    "slug": {
-      "pluginOptions": {},
-      "type": "uid",
-      "required": true,
-      "targetField": "title"
-    },
     "pages": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq-page.faq-page",
       "mappedBy": "group"
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "targetField": "title",
+      "required": true
     }
   }
 }

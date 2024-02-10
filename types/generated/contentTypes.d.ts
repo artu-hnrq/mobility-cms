@@ -1811,13 +1811,18 @@ export interface ApiFaqGroupFaqGroup extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    slug: Attribute.UID<'api::faq-group.faq-group', 'title'> &
-      Attribute.Required;
     pages: Attribute.Relation<
       'api::faq-group.faq-group',
       'oneToMany',
       'api::faq-page.faq-page'
     >;
+    slug: Attribute.UID<'api::faq-group.faq-group', 'title'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
