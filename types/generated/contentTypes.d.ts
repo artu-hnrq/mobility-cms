@@ -886,7 +886,6 @@ export interface ApiB2BHomePageB2BHomePage extends Schema.SingleType {
       'oneToOne',
       'api::section-banner.section-banner'
     >;
-    logo_list: Attribute.Component<'component.logo-list'>;
     become_partner: Attribute.Relation<
       'api::b2b-home-page.b2b-home-page',
       'oneToOne',
@@ -927,6 +926,11 @@ export interface ApiB2BHomePageB2BHomePage extends Schema.SingleType {
       'oneToOne',
       'api::faq-list.faq-list'
     >;
+    logo_list: Attribute.Component<'component.logo', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<{
+        min: 2;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

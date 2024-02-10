@@ -22,11 +22,6 @@
       "relation": "oneToOne",
       "target": "api::section-banner.section-banner"
     },
-    "logo_list": {
-      "type": "component",
-      "repeatable": false,
-      "component": "component.logo-list"
-    },
     "become_partner": {
       "type": "relation",
       "relation": "oneToOne",
@@ -66,6 +61,13 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::faq-list.faq-list"
+    },
+    "logo_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.logo",
+      "required": true,
+      "min": 2
     }
   }
 }

@@ -205,16 +205,6 @@ export interface ComponentImageLink extends Schema.Component {
   };
 }
 
-export interface ComponentLogoList extends Schema.Component {
-  collectionName: 'components_component_logo_lists';
-  info: {
-    displayName: 'logo_list';
-  };
-  attributes: {
-    logos: Attribute.Component<'component.logo', true> & Attribute.Required;
-  };
-}
-
 export interface ComponentLogo extends Schema.Component {
   collectionName: 'components_component_logos';
   info: {
@@ -378,7 +368,6 @@ declare module '@strapi/types' {
       'component.feature': ComponentFeature;
       'component.icon': ComponentIcon;
       'component.image-link': ComponentImageLink;
-      'component.logo-list': ComponentLogoList;
       'component.logo': ComponentLogo;
       'component.multiple-fields': ComponentMultipleFields;
       'component.section-header': ComponentSectionHeader;
