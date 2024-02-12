@@ -1762,6 +1762,11 @@ export interface ApiFaqGroupFaqGroup extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    related_groups: Attribute.Relation<
+      'api::faq-group.faq-group',
+      'oneToMany',
+      'api::faq-group.faq-group'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
