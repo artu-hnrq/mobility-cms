@@ -1587,61 +1587,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
-export interface ApiDataWhitelabelRequestDataWhitelabelRequest
-  extends Schema.CollectionType {
-  collectionName: 'data_whitelabel_requests';
-  info: {
-    singularName: 'data-whitelabel-request';
-    pluralName: 'data-whitelabel-requests';
-    displayName: 'Data.Whitelabel Request';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    date: Attribute.DateTime &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    client: Attribute.Component<'user.client'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::data-whitelabel-request.data-whitelabel-request',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::data-whitelabel-request.data-whitelabel-request',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::data-whitelabel-request.data-whitelabel-request',
-      'oneToMany',
-      'api::data-whitelabel-request.data-whitelabel-request'
-    >;
-    locale: Attribute.String;
-  };
-}
-
 export interface ApiExperienceListExperienceList extends Schema.CollectionType {
   collectionName: 'experience_lists';
   info: {
@@ -2711,11 +2656,6 @@ export interface ApiWhitelabelPageWhitelabelPage extends Schema.CollectionType {
     };
   };
   attributes: {
-    whitelabel_request: Attribute.Relation<
-      'api::whitelabel-page.whitelabel-page',
-      'oneToOne',
-      'api::data-whitelabel-request.data-whitelabel-request'
-    >;
     logo: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2738,6 +2678,27 @@ export interface ApiWhitelabelPageWhitelabelPage extends Schema.CollectionType {
       Attribute.SetMinMax<{
         min: 2;
         max: 2;
+      }>;
+    slug: Attribute.UID &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    date: Attribute.DateTime &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    client: Attribute.Component<'user.client'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -2790,7 +2751,6 @@ declare module '@strapi/types' {
       'api::blog-post-list.blog-post-list': ApiBlogPostListBlogPostList;
       'api::booking.booking': ApiBookingBooking;
       'api::category.category': ApiCategoryCategory;
-      'api::data-whitelabel-request.data-whitelabel-request': ApiDataWhitelabelRequestDataWhitelabelRequest;
       'api::experience-list.experience-list': ApiExperienceListExperienceList;
       'api::experience-page.experience-page': ApiExperiencePageExperiencePage;
       'api::faq-group.faq-group': ApiFaqGroupFaqGroup;

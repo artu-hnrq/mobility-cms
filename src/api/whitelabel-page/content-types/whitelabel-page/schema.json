@@ -16,11 +16,6 @@
     }
   },
   "attributes": {
-    "whitelabel_request": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::data-whitelabel-request.data-whitelabel-request"
-    },
     "logo": {
       "type": "media",
       "multiple": false,
@@ -56,6 +51,35 @@
       "min": 2,
       "required": true,
       "max": 2
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "required": true
+    },
+    "date": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "datetime",
+      "required": true
+    },
+    "client": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "user.client",
+      "required": true
     }
   }
 }
