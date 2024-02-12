@@ -39,7 +39,7 @@
       },
       "component": "user.credentials-mobility"
     },
-    "color_pick": {
+    "colors": {
       "type": "component",
       "repeatable": true,
       "pluginOptions": {

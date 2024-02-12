@@ -2673,7 +2673,7 @@ export interface ApiWhitelabelPageWhitelabelPage extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    color_pick: Attribute.Component<'component.multiple-fields', true> &
+    colors: Attribute.Component<'component.multiple-fields', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
