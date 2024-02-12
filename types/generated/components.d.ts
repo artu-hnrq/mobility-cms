@@ -344,10 +344,11 @@ export interface UserCredentialsMobility extends Schema.Component {
   info: {
     displayName: 'Credentials Mobility';
     icon: 'shield';
+    description: '';
   };
   attributes: {
     login: Attribute.String & Attribute.Required;
-    password: Attribute.String & Attribute.Required & Attribute.Private;
+    password: Attribute.String & Attribute.Required;
   };
 }
 
