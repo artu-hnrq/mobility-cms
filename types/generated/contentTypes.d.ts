@@ -1943,6 +1943,12 @@ export interface ApiFaqPageFaqPage extends Schema.CollectionType {
       'manyToOne',
       'api::faq-group.faq-group'
     >;
+    summary: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
