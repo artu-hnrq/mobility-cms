@@ -80,7 +80,7 @@
       "targetField": "title",
       "required": true
     },
-    "blog_post_list": {
+    "related_posts": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::blog-post-list.blog-post-list"

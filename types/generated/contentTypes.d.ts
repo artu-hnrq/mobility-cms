@@ -1253,7 +1253,7 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
       }>;
     slug: Attribute.UID<'api::blog-post.blog-post', 'title'> &
       Attribute.Required;
-    blog_post_list: Attribute.Relation<
+    related_posts: Attribute.Relation<
       'api::blog-post.blog-post',
       'oneToOne',
       'api::blog-post-list.blog-post-list'
