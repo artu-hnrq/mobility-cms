@@ -1197,7 +1197,7 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
   info: {
     singularName: 'blog-post';
     pluralName: 'blog-posts';
-    displayName: 'Blog Post';
+    displayName: 'Page.Blog Post';
     description: '';
   };
   options: {
@@ -2048,7 +2048,7 @@ export interface ApiItineraryItinerary extends Schema.CollectionType {
   info: {
     singularName: 'itinerary';
     pluralName: 'itineraries';
-    displayName: 'Itinerary';
+    displayName: 'Page.Itinerary';
     description: '';
   };
   options: {
