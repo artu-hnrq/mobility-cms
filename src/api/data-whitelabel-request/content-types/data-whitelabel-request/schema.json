@@ -4,10 +4,11 @@
   "info": {
     "singularName": "data-whitelabel-request",
     "pluralName": "data-whitelabel-requests",
-    "displayName": "Data.Whitelabel Request"
+    "displayName": "Data.Whitelabel Request",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {
     "i18n": {

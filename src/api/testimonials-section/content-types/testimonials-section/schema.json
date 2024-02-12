@@ -4,10 +4,11 @@
   "info": {
     "singularName": "testimonials-section",
     "pluralName": "testimonials-sections",
-    "displayName": "Section.Testimonials"
+    "displayName": "Section.Testimonials",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {

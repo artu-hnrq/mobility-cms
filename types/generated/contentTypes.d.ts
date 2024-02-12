@@ -1049,7 +1049,7 @@ export interface ApiBannerBanner extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -1106,7 +1106,6 @@ export interface ApiBannerBanner extends Schema.CollectionType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::banner.banner',
       'oneToOne',
@@ -1202,7 +1201,7 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -1261,7 +1260,6 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::blog-post.blog-post',
       'oneToOne',
@@ -1292,7 +1290,7 @@ export interface ApiBlogPostListBlogPostList extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -1319,7 +1317,6 @@ export interface ApiBlogPostListBlogPostList extends Schema.CollectionType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::blog-post-list.blog-post-list',
       'oneToOne',
@@ -1350,7 +1347,7 @@ export interface ApiBookingBooking extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -1480,7 +1477,6 @@ export interface ApiBookingBooking extends Schema.CollectionType {
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::booking.booking',
       'oneToOne',
@@ -1511,7 +1507,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -1570,7 +1566,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::category.category',
       'oneToOne',
@@ -1599,9 +1594,10 @@ export interface ApiDataWhitelabelRequestDataWhitelabelRequest
     singularName: 'data-whitelabel-request';
     pluralName: 'data-whitelabel-requests';
     displayName: 'Data.Whitelabel Request';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -1625,7 +1621,6 @@ export interface ApiDataWhitelabelRequestDataWhitelabelRequest
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::data-whitelabel-request.data-whitelabel-request',
       'oneToOne',
@@ -1656,7 +1651,7 @@ export interface ApiExperienceListExperienceList extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -1677,7 +1672,6 @@ export interface ApiExperienceListExperienceList extends Schema.CollectionType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::experience-list.experience-list',
       'oneToOne',
@@ -1778,7 +1772,7 @@ export interface ApiFaqGroupFaqGroup extends Schema.CollectionType {
   info: {
     singularName: 'faq-group';
     pluralName: 'faq-groups';
-    displayName: 'FAQ Group';
+    displayName: 'Page.FAQ Group';
     description: '';
   };
   options: {
@@ -1856,7 +1850,7 @@ export interface ApiFaqListFaqList extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -1877,7 +1871,6 @@ export interface ApiFaqListFaqList extends Schema.CollectionType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::faq-list.faq-list',
       'oneToOne',
@@ -1982,7 +1975,7 @@ export interface ApiFeatureListFeatureList extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -2014,7 +2007,6 @@ export interface ApiFeatureListFeatureList extends Schema.CollectionType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::feature-list.feature-list',
       'oneToOne',
@@ -2045,7 +2037,7 @@ export interface ApiIconListIconList extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -2080,7 +2072,6 @@ export interface ApiIconListIconList extends Schema.CollectionType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::icon-list.icon-list',
       'oneToOne',
@@ -2111,7 +2102,7 @@ export interface ApiItineraryItinerary extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -2156,7 +2147,6 @@ export interface ApiItineraryItinerary extends Schema.CollectionType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::itinerary.itinerary',
       'oneToOne',
@@ -2187,7 +2177,7 @@ export interface ApiOpenQuestionOpenQuestion extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -2233,7 +2223,6 @@ export interface ApiOpenQuestionOpenQuestion extends Schema.CollectionType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::open-question.open-question',
       'oneToOne',
@@ -2472,7 +2461,7 @@ export interface ApiSectionBannerSectionBanner extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -2510,7 +2499,6 @@ export interface ApiSectionBannerSectionBanner extends Schema.CollectionType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::section-banner.section-banner',
       'oneToOne',
@@ -2587,16 +2575,16 @@ export interface ApiTestimonialsListTestimonialsList
     singularName: 'testimonials-list';
     pluralName: 'testimonials-lists';
     displayName: 'Section.List Testimonials';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     testimonials: Attribute.Component<'component.testimony', true> &
       Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::testimonials-list.testimonials-list',
       'oneToOne',
@@ -2619,9 +2607,10 @@ export interface ApiTestimonialsSectionTestimonialsSection
     singularName: 'testimonials-section';
     pluralName: 'testimonials-sections';
     displayName: 'Section.Testimonials';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     header: Attribute.Component<'component.section-header'> &
@@ -2633,7 +2622,6 @@ export interface ApiTestimonialsSectionTestimonialsSection
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::testimonials-section.testimonials-section',
       'oneToOne',
@@ -2659,7 +2647,7 @@ export interface ApiVehicleImageListVehicleImageList
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -2685,7 +2673,6 @@ export interface ApiVehicleImageListVehicleImageList
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::vehicle-image-list.vehicle-image-list',
       'oneToOne',
