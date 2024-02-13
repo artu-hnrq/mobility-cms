@@ -70,6 +70,48 @@
       "relation": "oneToMany",
       "target": "api::booking.booking",
       "mappedBy": "user"
+    },
+    "user_type": {
+      "type": "enumeration",
+      "enum": [
+        "person",
+        "company"
+      ],
+      "default": "person",
+      "required": true
+    },
+    "full_name": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    },
+    "cpf": {
+      "type": "string",
+      "unique": true,
+      "required": true,
+      "maxLength": 11
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "cnpj": {
+      "type": "string"
+    },
+    "company_name": {
+      "type": "string"
+    },
+    "company_fantasy_name": {
+      "type": "string"
+    },
+    "company_address": {
+      "type": "string"
+    },
+    "company_phone": {
+      "type": "string"
+    },
+    "company_email": {
+      "type": "email"
     }
   }
 }

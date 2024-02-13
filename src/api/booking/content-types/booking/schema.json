@@ -192,6 +192,39 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "bookings"
+    },
+    "total_prepaid": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "booking.amount",
+      "required": true
+    },
+    "rav": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "booking.amount",
+      "required": true
+    },
+    "issuance_fee_amount": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "booking.amount",
+      "required": true
     }
   }
 }
