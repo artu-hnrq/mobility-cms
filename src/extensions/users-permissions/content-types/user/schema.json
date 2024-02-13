@@ -112,6 +112,13 @@
     },
     "company_email": {
       "type": "email"
+    },
+    "photo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

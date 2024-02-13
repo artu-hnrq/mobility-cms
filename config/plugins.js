@@ -16,7 +16,7 @@ module.exports = {
     "users-permissions": {
         config: {
           register: {
-            allowedFields: ["user_type","full_name","cpf","phone","cnpj","company_name","company_fantasy_name","company_address","company_phone","company_email"],
+            allowedFields: ["user_type","full_name","cpf","phone","cnpj","company_name","company_fantasy_name","company_address","company_phone","company_email","photo"],
           },
         },
     },

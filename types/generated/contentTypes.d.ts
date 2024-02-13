@@ -641,6 +641,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     company_address: Attribute.String;
     company_phone: Attribute.String;
     company_email: Attribute.Email;
+    photo: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
