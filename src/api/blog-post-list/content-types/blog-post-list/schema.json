@@ -16,19 +16,6 @@
     }
   },
   "attributes": {
-    "links": {
-      "displayName": "Blog Post",
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "link.blog-post",
-      "required": true,
-      "min": 3
-    },
     "header": {
       "type": "component",
       "repeatable": false,
@@ -39,6 +26,11 @@
       },
       "component": "component.section-header",
       "required": true
+    },
+    "links": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog-post.blog-post"
     }
   }
 }

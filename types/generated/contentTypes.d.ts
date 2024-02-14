@@ -662,7 +662,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
 export interface PluginMenusMenu extends Schema.CollectionType {
   collectionName: 'menus';
   info: {
-    name: 'Menu';
     displayName: 'Menu';
     singularName: 'menu';
     pluralName: 'menus';
@@ -1330,16 +1329,6 @@ export interface ApiBlogPostListBlogPostList extends Schema.CollectionType {
     };
   };
   attributes: {
-    links: Attribute.Component<'link.blog-post', true> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.SetMinMax<{
-        min: 3;
-      }>;
     header: Attribute.Component<'component.section-header'> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1347,6 +1336,11 @@ export interface ApiBlogPostListBlogPostList extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    links: Attribute.Relation<
+      'api::blog-post-list.blog-post-list',
+      'oneToMany',
+      'api::blog-post.blog-post'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

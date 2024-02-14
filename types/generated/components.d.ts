@@ -266,38 +266,6 @@ export interface ComponentValues extends Schema.Component {
   };
 }
 
-export interface LinkBlogPost extends Schema.Component {
-  collectionName: 'components_link_blog_posts';
-  info: {
-    displayName: 'Blog Post';
-    icon: 'link';
-  };
-  attributes: {
-    image: Attribute.Media & Attribute.Required;
-    page: Attribute.Relation<
-      'link.blog-post',
-      'oneToOne',
-      'api::blog-post.blog-post'
-    >;
-  };
-}
-
-export interface LinkExperiencePage extends Schema.Component {
-  collectionName: 'components_link_experience_pages';
-  info: {
-    displayName: 'Experience Page';
-    icon: 'link';
-  };
-  attributes: {
-    image: Attribute.Media & Attribute.Required;
-    page: Attribute.Relation<
-      'link.experience-page',
-      'oneToOne',
-      'api::experience-page.experience-page'
-    >;
-  };
-}
-
 export interface LinkVehicleImage extends Schema.Component {
   collectionName: 'components_link_vehicle_images';
   info: {
@@ -374,8 +342,6 @@ declare module '@strapi/types' {
       'component.section-header': ComponentSectionHeader;
       'component.testimony': ComponentTestimony;
       'component.values': ComponentValues;
-      'link.blog-post': LinkBlogPost;
-      'link.experience-page': LinkExperiencePage;
       'link.vehicle-image': LinkVehicleImage;
       'seo.metadate': SeoMetadate;
       'user.client': UserClient;
