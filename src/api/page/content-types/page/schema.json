@@ -146,6 +146,26 @@
       "component": "component.feature",
       "required": true,
       "max": 3
+    },
+    "page_experiences": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::experience-page.experience-page"
+    },
+    "page_blog_posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog-post.blog-post"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "component.feature"
     }
   }
 }
